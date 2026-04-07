@@ -1,0 +1,1094 @@
+<!DOCTYPE html>
+
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Teppanyaki">
+<meta name="theme-color" content="#0c0c10">
+<title>🔥 Teppanyaki Guide</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="apple-touch-icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMjAgMTIwIj48cmVjdCB3aWR0aD0iMTIwIiBoZWlnaHQ9IjEyMCIgcng9IjI2IiBmaWxsPSIjMGMwYzEwIi8+PHRleHQgeD0iNjAiIHk9IjUwIiBmb250LXNpemU9IjQwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkb21pbmFudC1iYXNlbGluZT0ibWlkZGxlIj7wn5SlPC90ZXh0PjxyZWN0IHg9IjIwIiB5PSI3NiIgd2lkdGg9IjgwIiBoZWlnaHQ9IjUiIHJ4PSIyLjUiIGZpbGw9IiNGRjZCMzUiIG9wYWNpdHk9IjAuOSIvPjxyZWN0IHg9IjIwIiB5PSI4NiIgd2lkdGg9IjU1IiBoZWlnaHQ9IjQiIHJ4PSIyIiBmaWxsPSIjRkZENjBBIiBvcGFjaXR5PSIwLjgiLz48cmVjdCB4PSIyMCIgeT0iOTUiIHdpZHRoPSI2OCIgaGVpZ2h0PSI0IiByeD0iMiIgZmlsbD0iIzMyRDc0QiIgb3BhY2l0eT0iMC42Ii8+PC9zdmc+">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMjAgMTIwIj48cmVjdCB3aWR0aD0iMTIwIiBoZWlnaHQ9IjEyMCIgcng9IjI2IiBmaWxsPSIjMGMwYzEwIi8+PHRleHQgeD0iNjAiIHk9IjUwIiBmb250LXNpemU9IjQwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkb21pbmFudC1iYXNlbGluZT0ibWlkZGxlIj7wn5SlPC90ZXh0PjxyZWN0IHg9IjIwIiB5PSI3NiIgd2lkdGg9IjgwIiBoZWlnaHQ9IjUiIHJ4PSIyLjUiIGZpbGw9IiNGRjZCMzUiIG9wYWNpdHk9IjAuOSIvPjxyZWN0IHg9IjIwIiB5PSI4NiIgd2lkdGg9IjU1IiBoZWlnaHQ9IjQiIHJ4PSIyIiBmaWxsPSIjRkZENjBBIiBvcGFjaXR5PSIwLjgiLz48cmVjdCB4PSIyMCIgeT0iOTUiIHdpZHRoPSI2OCIgaGVpZ2h0PSI0IiByeD0iMiIgZmlsbD0iIzMyRDc0QiIgb3BhY2l0eT0iMC42Ii8+PC9zdmc+">
+<style>
+:root {
+  --bg:#0c0c10; --card:#181820; --card2:#1e1e28; --bdr:#2a2a38;
+  --text:#f0ede8; --muted:#6a6a80; --soft:#9898b0;
+  --fire:#FF6B35;   /* main orange-fire accent */
+  --gold:#FFD60A;   /* yellow / meat */
+  --green:#32D74B;  /* veg / LDL */
+  --blue:#64D2FF;   /* tipps / fish */
+  --red:#FF453A;    /* scharf / hot */
+  --purple:#BF5AF2; /* special / fusion */
+  --egg:#FFC940;    /* eggs warm yellow */
+  --pan:#30B0C7;    /* pancakes teal */
+  /* section accents */
+  --c-guide:#FF6B35; --c-meat:#FF453A; --c-veg:#32D74B;
+  --c-eggs:#FFC940;  --c-pan:#30B0C7;  --c-special:#BF5AF2;
+  --c-tipps:#64D2FF;
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
+}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+html{background:var(--bg)}
+body{background:var(--bg);color:var(--text);font-family:"Nunito Sans",sans-serif;font-size:15px;min-height:100%;padding-bottom:calc(60px + var(--safe-bottom));-webkit-font-smoothing:antialiased}
+
+/* ─ PAGES ─ */
+.page{display:none}
+.page.active{display:block;animation:fadeup .18s ease}
+@keyframes fadeup{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:none}}
+
+/* ─ NAV ─ */
+#nav{position:fixed;bottom:0;left:0;right:0;z-index:9999;background:#12121a;border-top:1px solid var(–bdr);display:flex;align-items:stretch;padding-bottom:var(–safe-bottom);min-height:56px}
+.nb{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:7px 1px 5px;background:none;border:none;cursor:pointer;gap:3px;position:relative}
+.nb::after{content:’’;position:absolute;top:0;left:10%;right:10%;height:2.5px;border-radius:0 0 3px 3px;transform:scaleX(0);transition:transform .2s cubic-bezier(.34,1.4,.64,1)}
+.nb.on::after{transform:scaleX(1)}
+.nb[data-p=“home”]::after    {background:#fff}
+.nb[data-p=“guide”]::after   {background:var(–c-guide)}
+.nb[data-p=“meat”]::after    {background:var(–c-meat)}
+.nb[data-p=“veg”]::after     {background:var(–c-veg)}
+.nb[data-p=“eggs”]::after    {background:var(–c-eggs)}
+.nb[data-p=“pan”]::after     {background:var(–c-pan)}
+.nb[data-p=“special”]::after {background:var(–c-special)}
+.ni{font-size:1.2rem;line-height:1;transition:transform .15s}
+.nb.on .ni{transform:scale(1.15)}
+.nl{font-size:.44rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:var(–muted);transition:color .15s;line-height:1}
+.nb.on .nl{color:var(–text);font-weight:900}
+.nbadge{position:absolute;top:4px;right:calc(50% - 18px);font-size:.4rem;font-weight:900;height:12px;min-width:12px;border-radius:99px;display:flex;align-items:center;justify-content:center;padding:0 3px;color:#000}
+.nb[data-p=“guide”]   .nbadge{background:var(–c-guide);color:#fff}
+.nb[data-p=“meat”]    .nbadge{background:var(–c-meat);color:#fff}
+.nb[data-p=“veg”]     .nbadge{background:var(–c-veg)}
+.nb[data-p=“eggs”]    .nbadge{background:var(–c-eggs)}
+.nb[data-p=“pan”]     .nbadge{background:var(–c-pan)}
+.nb[data-p=“special”] .nbadge{background:var(–c-special);color:#fff}
+
+/* ─ HERO ─ */
+.hero{border-bottom:1px solid var(–bdr)}
+.hero-bar{display:flex;justify-content:space-between;padding:5px 16px;font-family:“Nunito”,sans-serif;font-size:.57rem;font-weight:800;letter-spacing:.22em;text-transform:uppercase;color:#000}
+.hero-body{padding:18px 16px 20px;position:relative;overflow:hidden}
+.hero-body::before{content:attr(data-emoji);position:absolute;right:-12px;bottom:-20px;font-size:110px;opacity:.06;pointer-events:none;transform:rotate(12deg)}
+.hero-title{font-family:“Nunito”,sans-serif;font-weight:900;font-size:clamp(2rem,9vw,3.8rem);line-height:.88;text-transform:uppercase;letter-spacing:-.02em;color:var(–text)}
+.hero-title em{font-style:normal}
+.hero-sub{font-size:.73rem;color:var(–muted);margin-top:8px;line-height:1.6}
+.hero-pills{display:flex;gap:6px;flex-wrap:wrap;margin-top:10px}
+.pill{background:var(–card2);border:1px solid var(–bdr);border-radius:99px;padding:3px 10px;font-size:.6rem;font-weight:700;color:var(–soft)}
+
+/* per section */
+.sec-guide  .hero-bar{background:var(–c-guide)} .sec-guide  .hero-title em{color:var(–c-guide)} .sec-guide  .pill.hl{border-color:var(–c-guide);color:var(–c-guide)}
+.sec-meat   .hero-bar{background:var(–c-meat);color:#fff} .sec-meat   .hero-title em{color:var(–c-meat)} .sec-meat   .pill.hl{border-color:var(–c-meat);color:var(–c-meat)}
+.sec-veg    .hero-bar{background:var(–c-veg)}  .sec-veg    .hero-title em{color:var(–c-veg)} .sec-veg    .pill.hl{border-color:var(–c-veg);color:var(–c-veg)}
+.sec-eggs   .hero-bar{background:var(–c-eggs)} .sec-eggs   .hero-title em{color:var(–c-egg)} .sec-eggs   .pill.hl{border-color:var(–c-egg);color:var(–c-egg)}
+.sec-pan    .hero-bar{background:var(–c-pan);color:#fff} .sec-pan    .hero-title em{color:var(–c-pan)} .sec-pan    .pill.hl{border-color:var(–c-pan);color:var(–c-pan)}
+.sec-special .hero-bar{background:var(–c-special);color:#fff} .sec-special .hero-title em{color:var(–c-special)} .sec-special .pill.hl{border-color:var(–c-special);color:var(–c-special)}
+
+/* ─ FILTERS ─ */
+.fwrap{padding:10px 14px 4px;max-width:720px;margin:0 auto}
+.frow{margin-bottom:8px}
+.flbl{font-size:.52rem;font-weight:800;letter-spacing:.15em;text-transform:uppercase;color:var(–muted);margin-bottom:5px}
+.fbar{display:flex;gap:5px;overflow-x:auto;scrollbar-width:none;padding-bottom:2px}
+.fbar::-webkit-scrollbar{display:none}
+.fbtn{flex-shrink:0;background:var(–card);border:1.5px solid var(–bdr);color:var(–muted);padding:5px 11px;border-radius:99px;font-family:“Nunito Sans”,sans-serif;font-size:.67rem;font-weight:700;cursor:pointer;transition:all .12s;white-space:nowrap}
+.sec-meat    .fbtn.on{background:var(–c-meat);border-color:var(–c-meat);color:#fff}
+.sec-veg     .fbtn.on{background:var(–c-veg);border-color:var(–c-veg);color:#000}
+.sec-eggs    .fbtn.on{background:var(–c-eggs);border-color:var(–c-eggs);color:#000}
+.sec-pan     .fbtn.on{background:var(–c-pan);border-color:var(–c-pan);color:#fff}
+.sec-special .fbtn.on{background:var(–c-special);border-color:var(–c-special);color:#fff}
+
+/* ─ GRID ─ */
+.grid{display:flex;flex-direction:column;gap:8px;padding:8px 14px 16px;max-width:720px;margin:0 auto}
+@media(min-width:520px){.grid{display:grid;grid-template-columns:1fr 1fr}}
+
+/* ─ CARD ─ */
+.card{background:var(–card);border:1.5px solid var(–bdr);border-radius:14px;overflow:hidden;cursor:pointer;transition:border-color .15s;position:relative}
+.card::before{content:’’;position:absolute;left:0;top:0;bottom:0;width:4px;border-radius:4px 0 0 4px}
+.sec-meat    .card::before{background:var(–c-meat)}
+.sec-veg     .card::before{background:var(–c-veg)}
+.sec-eggs    .card::before{background:var(–c-eggs)}
+.sec-pan     .card::before{background:var(–c-pan)}
+.sec-special .card::before{background:var(–c-special)}
+.sec-meat    .card.open{border-color:var(–c-meat);box-shadow:0 0 0 1px rgba(255,69,58,.15),0 4px 20px rgba(255,69,58,.07)}
+.sec-veg     .card.open{border-color:var(–c-veg);box-shadow:0 0 0 1px rgba(50,215,75,.15),0 4px 20px rgba(50,215,75,.07)}
+.sec-eggs    .card.open{border-color:var(–c-eggs);box-shadow:0 0 0 1px rgba(255,201,64,.15),0 4px 20px rgba(255,201,64,.07)}
+.sec-pan     .card.open{border-color:var(–c-pan);box-shadow:0 0 0 1px rgba(48,176,199,.15),0 4px 20px rgba(48,176,199,.07)}
+.sec-special .card.open{border-color:var(–c-special);box-shadow:0 0 0 1px rgba(191,90,242,.15),0 4px 20px rgba(191,90,242,.07)}
+
+.card-hd{padding:12px 13px 12px 16px;display:flex;align-items:center;gap:10px;user-select:none}
+.card-ico{font-size:1.35rem;width:40px;height:40px;background:var(–card2);border-radius:9px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.card-inf{flex:1;min-width:0}
+.card-title{font-family:“Nunito”,sans-serif;font-weight:800;font-size:.88rem;color:var(–text);line-height:1.2}
+.card-sub{font-size:.65rem;color:var(–muted);margin-top:2px;line-height:1.4}
+.card-tags{display:flex;gap:4px;flex-wrap:wrap;margin-top:5px}
+.tag{font-size:.55rem;padding:2px 7px;border-radius:99px;font-weight:700;letter-spacing:.04em;border:1px solid transparent}
+.ty{background:rgba(255,212,10,.13);color:var(–gold);border-color:rgba(255,212,10,.2)}
+.tr{background:rgba(255,69,58,.14);color:var(–red);border-color:rgba(255,69,58,.2)}
+.ta{background:rgba(255,107,53,.14);color:var(–fire);border-color:rgba(255,107,53,.2)}
+.tg{background:rgba(50,215,75,.13);color:var(–green);border-color:rgba(50,215,75,.2)}
+.tb{background:rgba(100,210,255,.13);color:var(–blue);border-color:rgba(100,210,255,.2)}
+.tw{background:rgba(255,255,255,.06);color:var(–soft);border-color:rgba(255,255,255,.08)}
+.tp{background:rgba(191,90,242,.13);color:var(–purple);border-color:rgba(191,90,242,.2)}
+.te{background:rgba(255,201,64,.13);color:var(–egg);border-color:rgba(255,201,64,.2)}
+
+.card-chev{color:var(–muted);font-size:.7rem;transition:transform .28s ease;flex-shrink:0}
+.card.open .card-chev{transform:rotate(180deg)}
+.card-bd{max-height:0;overflow:hidden;transition:max-height .38s cubic-bezier(.4,0,.2,1)}
+.card.open .card-bd{max-height:4000px}
+.card-in{padding:13px 14px 18px 16px;border-top:1px solid var(–bdr)}
+
+/* recipe number */
+.rnum{display:inline-block;font-family:“Nunito”,sans-serif;font-weight:900;font-size:.58rem;padding:1px 6px;border-radius:5px;margin-right:5px;vertical-align:middle}
+.sec-meat    .rnum{background:rgba(255,69,58,.18);color:var(–c-meat)}
+.sec-veg     .rnum{background:rgba(50,215,75,.16);color:var(–c-veg)}
+.sec-eggs    .rnum{background:rgba(255,201,64,.16);color:var(–c-eggs)}
+.sec-pan     .rnum{background:rgba(48,176,199,.16);color:var(–c-pan)}
+.sec-special .rnum{background:rgba(191,90,242,.16);color:var(–c-special)}
+
+/* ─ PORTIONS ─ */
+.portions{display:flex;align-items:center;gap:8px;background:var(–card2);border:1.5px solid var(–bdr);border-radius:9px;padding:6px 12px;margin-bottom:12px}
+.por-lbl{font-size:.62rem;font-weight:700;color:var(–muted);flex:1}
+.por-btn{background:var(–bdr);border:none;color:var(–text);width:28px;height:28px;border-radius:7px;font-size:1.1rem;font-weight:800;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.por-val{font-family:“Nunito”,sans-serif;font-weight:900;font-size:1.1rem;min-width:22px;text-align:center}
+.sec-meat    .por-val{color:var(–c-meat)}
+.sec-veg     .por-val{color:var(–c-veg)}
+.sec-eggs    .por-val{color:var(–c-eggs)}
+.sec-pan     .por-val{color:var(–c-pan)}
+.sec-special .por-val{color:var(–c-special)}
+
+/* ─ TYPOGRAPHY ─ */
+.lbl{font-size:.52rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;margin:12px 0 7px;color:var(–muted)}
+.lbl:first-child{margin-top:0}
+.sec-meat    .lbl{color:var(–c-meat)}
+.sec-veg     .lbl{color:var(–c-veg)}
+.sec-eggs    .lbl{color:var(–c-eggs)}
+.sec-pan     .lbl{color:var(–c-pan)}
+.sec-special .lbl{color:var(–c-special)}
+.sec-guide   .lbl{color:var(–c-guide)}
+
+table{width:100%;border-collapse:collapse;font-size:.78rem}
+tr{border-bottom:1px solid var(–bdr)}
+tr:last-child{border-bottom:none}
+tr:nth-child(even) td{background:rgba(255,255,255,.02)}
+td{padding:5px 2px;line-height:1.3}
+td:first-child{color:var(–text);font-weight:600}
+td.amt{font-weight:800;text-align:right;padding-left:8px;white-space:nowrap}
+.sec-meat    td.amt{color:var(–c-meat)}
+.sec-veg     td.amt{color:var(–c-veg)}
+.sec-eggs    td.amt{color:var(–c-eggs)}
+.sec-pan     td.amt{color:var(–c-pan)}
+.sec-special td.amt{color:var(–c-special)}
+
+ol{list-style:none;counter-reset:step;padding:0}
+ol li{counter-increment:step;display:flex;gap:9px;font-size:.76rem;color:var(–muted);line-height:1.55;padding:6px 0;border-bottom:1px solid var(–bdr)}
+ol li:last-child{border-bottom:none}
+ol li::before{content:counter(step);font-family:“Nunito”,sans-serif;font-weight:900;font-size:.65rem;min-width:22px;height:22px;border-radius:6px;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;color:#000}
+.sec-meat    ol li::before{background:var(–c-meat);color:#fff}
+.sec-veg     ol li::before{background:var(–c-veg)}
+.sec-eggs    ol li::before{background:var(–c-eggs)}
+.sec-pan     ol li::before{background:var(–c-pan);color:#fff}
+.sec-special ol li::before{background:var(–c-special);color:#fff}
+ol li strong{color:var(–text)}
+
+.tip{margin-top:10px;padding:8px 11px;font-size:.71rem;color:var(–muted);line-height:1.55;border-left:3px solid var(–bdr);border-radius:0 6px 6px 0;background:var(–card2)}
+.sec-meat    .tip{border-left-color:var(–c-meat)}
+.sec-veg     .tip{border-left-color:var(–c-veg)}
+.sec-eggs    .tip{border-left-color:var(–c-eggs)}
+.sec-pan     .tip{border-left-color:var(–c-pan)}
+.sec-special .tip{border-left-color:var(–c-special)}
+
+.dev-badge{display:inline-flex;align-items:center;gap:4px;background:var(–card2);border:1.5px solid var(–bdr);border-radius:5px;padding:3px 8px;font-size:.6rem;font-weight:700;color:var(–muted);margin:0 4px 6px 0}
+
+/* ─ TIP BOX (guide) ─ */
+.tip-box{background:var(–card);border:1.5px solid var(–bdr);border-radius:14px;overflow:hidden;margin-bottom:8px}
+.tip-box-hd{padding:13px 14px;display:flex;align-items:center;gap:9px;background:var(–card2);cursor:pointer;border-bottom:1px solid var(–bdr)}
+.tip-box-hd .tbi{font-size:1.25rem}
+.tip-box-hd .tbt{font-family:“Nunito”,sans-serif;font-weight:800;font-size:.8rem;flex:1}
+.tip-box-chev{font-size:.7rem;color:var(–muted);transition:transform .22s;flex-shrink:0}
+.tip-box.open .tip-box-chev{transform:rotate(180deg)}
+.tip-box-bd{max-height:0;overflow:hidden;transition:max-height .35s ease}
+.tip-box.open .tip-box-bd{max-height:800px}
+.tip-item{display:flex;gap:9px;padding:8px 14px;font-size:.73rem;color:var(–muted);line-height:1.5;border-bottom:1px solid var(–bdr)}
+.tip-item:last-child{border-bottom:none}
+.tip-num{font-family:“Nunito”,sans-serif;font-weight:900;min-width:18px;font-size:.64rem;margin-top:1px;flex-shrink:0}
+
+/* ─ HOME ─ */
+.home-wrap{min-height:calc(100vh - 62px);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:28px 18px;text-align:center;position:relative;overflow:hidden}
+.home-wrap::before{content:“🔥”;position:absolute;font-size:240px;opacity:.04;top:50%;left:50%;transform:translate(-50%,-55%);pointer-events:none}
+.home-title{font-family:“Nunito”,sans-serif;font-weight:900;font-size:clamp(2.4rem,10vw,4.5rem);line-height:.86;text-transform:uppercase;letter-spacing:-.02em;margin-bottom:10px}
+.home-title .l1{color:var(–text)}
+.home-title .l2{color:var(–fire)}
+.home-title .l3{color:var(–gold)}
+.home-sub{font-size:.76rem;color:var(–muted);line-height:1.7;max-width:280px;margin:0 auto 22px}
+.home-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;width:100%;max-width:340px}
+.hc{background:var(–card);border:1.5px solid var(–bdr);border-radius:12px;padding:14px 10px;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:5px;transition:transform .13s,border-color .13s}
+.hc:active{transform:scale(.96)}
+.hc .hi{font-size:1.65rem}
+.hc .ht{font-family:“Nunito”,sans-serif;font-weight:800;font-size:.72rem;color:var(–text)}
+.hc .hs{font-size:.57rem;color:var(–muted)}
+.hc.c1{border-color:rgba(255,107,53,.3)}
+.hc.c2{border-color:rgba(255,69,58,.3)}
+.hc.c3{border-color:rgba(50,215,75,.3)}
+.hc.c4{border-color:rgba(255,201,64,.3)}
+.hc.c5{border-color:rgba(48,176,199,.3)}
+.hc.c6{border-color:rgba(191,90,242,.3);grid-column:1/-1;flex-direction:row;justify-content:center;gap:12px}
+.random-btn{margin-top:16px;display:flex;align-items:center;gap:8px;background:var(–card);border:1.5px solid var(–bdr);border-radius:99px;padding:9px 20px;font-family:“Nunito”,sans-serif;font-size:.76rem;font-weight:800;color:var(–soft);cursor:pointer;transition:all .13s}
+.random-btn:active{background:var(–card2);transform:scale(.97)}
+
+/* ─ SDIV ─ */
+.sdiv{display:flex;align-items:center;gap:10px;padding:14px 14px 8px;max-width:720px;margin:0 auto}
+.sdiv-t{font-family:“Nunito”,sans-serif;font-weight:800;font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;white-space:nowrap}
+.sec-guide   .sdiv-t{color:var(–c-guide)}
+.sec-meat    .sdiv-t{color:var(–c-meat)}
+.sec-veg     .sdiv-t{color:var(–c-veg)}
+.sec-eggs    .sdiv-t{color:var(–c-eggs)}
+.sec-pan     .sdiv-t{color:var(–c-pan)}
+.sec-special .sdiv-t{color:var(–c-special)}
+.sdiv-line{flex:1;height:1px;background:var(–bdr)}
+
+/* count */
+.rcount{font-size:.63rem;color:var(–muted);padding:3px 14px 6px;max-width:720px;margin:0 auto}
+.rcount b{color:var(–text)}
+.empty{text-align:center;padding:40px 20px;color:var(–muted);font-size:.8rem;line-height:1.7}
+</style>
+
+</head>
+<body>
+
+<!-- HOME -->
+
+<div class="page active" id="page-home">
+<div class="home-wrap">
+  <div class="home-title"><div class="l1">TEPPAN</div><div class="l2">YAKI</div><div class="l3">GUIDE</div></div>
+  <p class="home-sub">Das heisse Stahl-Brett · Fleisch · Gemüse · Eier · Pancakes · Fusion</p>
+  <div class="home-grid">
+    <div class="hc c1" onclick="show('guide')"><span class="hi">📚</span><span class="ht">Grundlagen</span><span class="hs">6 Kapitel</span></div>
+    <div class="hc c2" onclick="show('meat')"><span class="hi">🥩</span><span class="ht">Fleisch & Fisch</span><span class="hs">10 Rezepte</span></div>
+    <div class="hc c3" onclick="show('veg')"><span class="hi">🥦</span><span class="ht">Gemüse</span><span class="hs">8 Rezepte</span></div>
+    <div class="hc c4" onclick="show('eggs')"><span class="hi">🥚</span><span class="ht">Eier</span><span class="hs">7 Rezepte</span></div>
+    <div class="hc c5" onclick="show('pan')"><span class="hi">🥞</span><span class="ht">Pancakes</span><span class="hs">7 Rezepte</span></div>
+    <div class="hc c6" onclick="show('special')"><span class="hi">⭐</span><span class="ht">Fusion & Spezialitäten</span><span class="hs">7 Rezepte</span></div>
+  </div>
+  <button class="random-btn" onclick="openRandom()">🎲 Zufälliges Rezept</button>
+</div>
+</div>
+
+<!-- GUIDE -->
+
+<div class="page sec-guide" id="page-guide">
+  <div class="hero">
+    <div class="hero-bar" style="background:var(--c-guide);color:#fff"><span>TEPPANYAKI GRUNDLAGEN</span><span>6 KAPITEL</span></div>
+    <div class="hero-body" data-emoji="🔥">
+      <div class="hero-title">DAS<br><em>TEPPAN</em><br>BRETT</div>
+      <div class="hero-sub">Temperaturen · Öle · Techniken · Saucen<br>Reinigung · Mise en Place</div>
+      <div class="hero-pills"><span class="pill hl">🌡️ Temperaturen</span><span class="pill hl">🔪 Techniken</span><span class="pill">🧄 Saucen</span></div>
+    </div>
+  </div>
+  <div style="padding:14px 14px 30px;max-width:720px;margin:0 auto" id="guide-wrap"></div>
+</div>
+
+<!-- FLEISCH -->
+
+<div class="page sec-meat" id="page-meat">
+  <div class="hero">
+    <div class="hero-bar" style="color:#fff"><span>FLEISCH & FISCH</span><span>10 REZEPTE</span></div>
+    <div class="hero-body" data-emoji="🥩">
+      <div class="hero-title">FLEISCH<br>&amp; <em>FISCH</em></div>
+      <div class="hero-sub">Wagyu · Hähnchen · Lachs · Garnelen<br>Teriyaki · Miso · Shio-Koji</div>
+      <div class="hero-pills"><span class="pill hl">🥩 Rind</span><span class="pill hl">🐔 Huhn</span><span class="pill hl">🐟 Fisch</span><span class="pill">💚 LDL-Filter</span></div>
+    </div>
+  </div>
+  <div class="fwrap">
+    <div class="frow"><div class="flbl">Kategorie</div><div class="fbar" id="mf-kat">
+      <button class="fbtn on" onclick="mf('kat','alle',this)">Alle</button>
+      <button class="fbtn" onclick="mf('kat','rind',this)">🥩 Rind</button>
+      <button class="fbtn" onclick="mf('kat','huhn',this)">🐔 Huhn</button>
+      <button class="fbtn" onclick="mf('kat','schwein',this)">🐖 Schwein</button>
+      <button class="fbtn" onclick="mf('kat','fisch',this)">🐟 Fisch & Seafood</button>
+    </div></div>
+    <div class="frow"><div class="flbl">Gesundheit</div><div class="fbar" id="mf-ldl">
+      <button class="fbtn on" onclick="mf('ldl','alle',this)">Alle</button>
+      <button class="fbtn" onclick="mf('ldl','ja',this)">💚 LDL-freundlich</button>
+    </div></div>
+  </div>
+  <div class="rcount" id="meat-count"></div>
+  <div class="grid" id="meat-grid"></div>
+  <div class="empty hidden" id="meat-empty">Kein Rezept für diese Auswahl.</div>
+</div>
+
+<!-- GEMÜSE -->
+
+<div class="page sec-veg" id="page-veg">
+  <div class="hero">
+    <div class="hero-bar"><span>GEMÜSE TEPPANYAKI</span><span>8 REZEPTE</span></div>
+    <div class="hero-body" data-emoji="🥦">
+      <div class="hero-title">GEMÜSE<br><em>TEPPAN</em></div>
+      <div class="hero-sub">Pilze · Aubergine · Kohl · Mais<br>Miso-Glasur · Gochujang · Vegan</div>
+      <div class="hero-pills"><span class="pill hl">🌱 Vegan</span><span class="pill hl">🍄 Pilze</span><span class="pill">🌶️ Korean</span></div>
+    </div>
+  </div>
+  <div class="fwrap">
+    <div class="frow"><div class="flbl">Kategorie</div><div class="fbar" id="vf-kat">
+      <button class="fbtn on" onclick="vf('kat','alle',this)">Alle</button>
+      <button class="fbtn" onclick="vf('kat','pilze',this)">🍄 Pilze</button>
+      <button class="fbtn" onclick="vf('kat','mischung',this)">🥗 Mischung</button>
+      <button class="fbtn" onclick="vf('kat','aubergine',this)">🍆 Aubergine</button>
+      <button class="fbtn" onclick="vf('kat','kohl',this)">🥬 Kohl</button>
+      <button class="fbtn" onclick="vf('kat','wurzelgemüse',this)">🥕 Wurzel</button>
+    </div></div>
+  </div>
+  <div class="grid" id="veg-grid"></div>
+</div>
+
+<!-- EIER -->
+
+<div class="page sec-eggs" id="page-eggs">
+  <div class="hero">
+    <div class="hero-bar"><span>EIER TEPPANYAKI</span><span>7 REZEPTE</span></div>
+    <div class="hero-body" data-emoji="🥚">
+      <div class="hero-title">EIER &amp;<br><em>OMELETT</em></div>
+      <div class="hero-sub">Rührei · Spiegelei · Tamagoyaki · Omu-Rice<br>Japanische Techniken · Schnell & Gut</div>
+      <div class="hero-pills"><span class="pill hl">🥚 Rührei</span><span class="pill hl">🇯🇵 Tamagoyaki</span><span class="pill">⭐ Technik</span></div>
+    </div>
+  </div>
+  <div class="fwrap">
+    <div class="frow"><div class="flbl">Art</div><div class="fbar" id="ef-kat">
+      <button class="fbtn on" onclick="ef('kat','alle',this)">Alle</button>
+      <button class="fbtn" onclick="ef('kat','rührei',this)">🍳 Rührei</button>
+      <button class="fbtn" onclick="ef('kat','omelett',this)">🥚 Omelett</button>
+      <button class="fbtn" onclick="ef('kat','spiegelei',this)">🍳 Spiegelei</button>
+    </div></div>
+  </div>
+  <div class="grid" id="eggs-grid"></div>
+</div>
+
+<!-- PANCAKES -->
+
+<div class="page sec-pan" id="page-pan">
+  <div class="hero">
+    <div class="hero-bar" style="color:#fff"><span>PANCAKES & TEIG</span><span>7 REZEPTE</span></div>
+    <div class="hero-body" data-emoji="🥞">
+      <div class="hero-title">PANCAKES<br>&amp; <em>TEIG</em></div>
+      <div class="hero-sub">Soufflé · Buttermilch · Okonomiyaki<br>Crêpes · Galette · Scallion Pancakes</div>
+      <div class="hero-pills"><span class="pill hl">🥞 Fluffig</span><span class="pill hl">🫔 Crêpe</span><span class="pill">🇯🇵 Japanisch</span></div>
+    </div>
+  </div>
+  <div class="fwrap">
+    <div class="frow"><div class="flbl">Art</div><div class="fbar" id="pf-kat">
+      <button class="fbtn on" onclick="pf('kat','alle',this)">Alle</button>
+      <button class="fbtn" onclick="pf('kat','japanisch',this)">🇯🇵 Japanisch</button>
+      <button class="fbtn" onclick="pf('kat','amerikanisch',this)">🇺🇸 Amerikanisch</button>
+      <button class="fbtn" onclick="pf('kat','crepe',this)">🫔 Crêpe</button>
+      <button class="fbtn" onclick="pf('kat','herzhaft',this)">🧀 Herzhaft</button>
+      <button class="fbtn" onclick="pf('kat','süss',this)">🍌 Süss</button>
+      <button class="fbtn" onclick="pf('kat','asiatisch',this)">🌏 Asiatisch</button>
+    </div></div>
+  </div>
+  <div class="grid" id="pan-grid"></div>
+</div>
+
+<!-- SPEZIALITÄTEN -->
+
+<div class="page sec-special" id="page-special">
+  <div class="hero">
+    <div class="hero-bar" style="color:#fff"><span>FUSION & SPEZIALITÄTEN</span><span>7 REZEPTE</span></div>
+    <div class="hero-body" data-emoji="⭐">
+      <div class="hero-title">FUSION<br>&amp; <em>SPECIALS</em></div>
+      <div class="hero-sub">Yakisoba · Fried Rice · Raclette · Korean BBQ<br>Teppanyaki Tacos · Halloumi · Pizza</div>
+      <div class="hero-pills"><span class="pill hl">⭐ Fusion</span><span class="pill hl">🍜 Yakisoba</span><span class="pill">🧀 Raclette</span></div>
+    </div>
+  </div>
+  <div class="fwrap">
+    <div class="frow"><div class="flbl">Kategorie</div><div class="fbar" id="sf-kat">
+      <button class="fbtn on" onclick="sf('kat','alle',this)">Alle</button>
+      <button class="fbtn" onclick="sf('kat','nudeln',this)">🍜 Nudeln</button>
+      <button class="fbtn" onclick="sf('kat','reis',this)">🍚 Reis</button>
+      <button class="fbtn" onclick="sf('kat','korean',this)">🇰🇷 Korean</button>
+      <button class="fbtn" onclick="sf('kat','käse',this)">🧀 Käse</button>
+      <button class="fbtn" onclick="sf('kat','vegetarisch',this)">🌱 Vegetarisch</button>
+      <button class="fbtn" onclick="sf('kat','fusion',this)">🌮 Fusion</button>
+    </div></div>
+  </div>
+  <div class="grid" id="special-grid"></div>
+</div>
+
+<!-- NAV -->
+
+<div id="nav">
+  <button class="nb on" data-p="home"    onclick="show('home',this)"><span class="ni">🏠</span><span class="nl">Home</span></button>
+  <button class="nb"    data-p="guide"   onclick="show('guide',this)"><span class="ni">📚</span><span class="nl">Guide</span><span class="nbadge">6</span></button>
+  <button class="nb"    data-p="meat"    onclick="show('meat',this)"><span class="ni">🥩</span><span class="nl">Fleisch</span><span class="nbadge">10</span></button>
+  <button class="nb"    data-p="veg"     onclick="show('veg',this)"><span class="ni">🥦</span><span class="nl">Gemüse</span><span class="nbadge">8</span></button>
+  <button class="nb"    data-p="eggs"    onclick="show('eggs',this)"><span class="ni">🥚</span><span class="nl">Eier</span><span class="nbadge">7</span></button>
+  <button class="nb"    data-p="pan"     onclick="show('pan',this)"><span class="ni">🥞</span><span class="nl">Pancakes</span><span class="nbadge">7</span></button>
+  <button class="nb"    data-p="special" onclick="show('special',this)"><span class="ni">⭐</span><span class="nl">Special</span><span class="nbadge">7</span></button>
+</div>
+
+<script>
+/* ═══════════════════════════════════════════════════════
+   TEPPANYAKI DATA - All recipe arrays
+   Rules: NO nested template literals, NO apostrophes in single-quoted strings
+═══════════════════════════════════════════════════════ */
+
+/* ── BASICS / GUIDE ─────────────────────────────────── */
+const GUIDE = [
+{ico:'🌡️',col:'var(--fire)',title:'Temperaturen & Zonen',items:[
+  'Teppanyaki-Platten haben eine heisse Zone (Mitte) und eine ruhige Zone (Rand)',
+  'Hohe Hitze (230–260°C): Fleisch scharf anbraten, Kruste bilden',
+  'Mittlere Hitze (180–200°C): Gemüse garen, Eier, Pfannkuchen',
+  'Niedrige Hitze (120–150°C): Warmhalten, fertige Gerichte halten',
+  'Immer vorheizen! Mindestens 5 Minuten bevor du anfängst',
+  'Wassertropfen-Test: Wasser verdampft sofort = bereit',
+  'Öl erst auf die heisse Platte – nie kalt einölen',
+  'Teppanyaki-Platten aus Gusseisen oder Stahl speichern Hitze perfekt',
+]},
+{ico:'🧈',col:'var(--egg)',title:'Öle & Fette: Was wann?',items:[
+  'Rapsöl oder Sonnenblumenöl: Allrounder, hoher Rauchpunkt, neutral',
+  'Sesamöl: NUR zum Abschmecken am Ende, verbrennt schnell',
+  'Butter: Mittlere Hitze für Pfannkuchen & Eier – gibt Röstaroma',
+  'Ghee (Butterschmalz): Bestes Allround-Fett, hoher Rauchpunkt + Buttergeschmack',
+  'Kokosfett: Für asiatische Gerichte, mild-süsslich',
+  'Olivenöl: Nur bis 190°C – nicht für sehr scharfes Anbraten',
+  'Tiers: Wenig Fett bei sehr heisser Platte – Fleisch klebt trotzdem nicht',
+  'Fettrolle: Speck oder Fettstück auf Platte reiben = antihaft-Effekt',
+]},
+{ico:'🔪',col:'var(--veg)',title:'Schneiden & Vorbereitung',items:[
+  'Alles VOR dem Kochen schneiden – Teppanyaki geht schnell!',
+  'Fleisch dünn schneiden (3-5mm): gart in 1-2 Min durch',
+  'Gemüse gleichmässig schneiden für gleichmässiges Garen',
+  'Fleisch Raumtemperatur nehmen lassen – 15 Min vor dem Braten',
+  'Trocken tupfen: Feuchtigkeit verhindert Röstaroma (Maillard-Reaktion)',
+  'Marinaden: Mindestens 30 Min, besser über Nacht',
+  'Frühlingszwiebeln in Ringe: Bestes Teppanyaki-Aroma',
+  'Knoblauch dünn in Scheiben, nicht pressen – gart gleichmässiger',
+]},
+{ico:'🥄',col:'var(--meat)',title:'Techniken & Tricks',items:[
+  'Taisho-Style: Zutaten in Zonen aufteilen, nichts mischen bis fertig',
+  'Schneebesen-Trick: Ei mit Spatel schnell verrühren = fluffiges Rührei',
+  'Yakisoba-Trick: Nudeln mit etwas Wasser dämpfen auf der Platte',
+  'Nicht zu viel auf einmal: Temperatur fällt – Fleisch dämpft statt zu braten',
+  'Spatel (Teppan-Goshi): Flach und breit, unverzichtbar',
+  'Platte nach dem Kochen mit Wasser ablöschen und abschaben – einfache Reinigung',
+  'Frühlingszwiebeln und Sesam IMMER am Ende – nie mitbraten',
+  'Gewürze sparsam direkt auf die Platte – nicht ins Öl',
+]},
+{ico:'🧄',col:'var(--fire)',title:'Saucen & Würzen',items:[
+  'Sojasauce: Basis für alles – wenig reicht!',
+  'Teriyaki-Sauce: Sojasauce + Mirin + Honig + Sake (1:1:1:1)',
+  'Tsuyu-Dipping: Dashi + Sojasauce + Mirin – die universelle Dip-Sauce',
+  'Ponzu: Zitrus + Sojasauce – perfekt zu Fleisch und Meeresfrüchten',
+  'Yakisoba-Sauce: Worcestershire + Ketchup + Sojasauce + Zucker',
+  'Goma-Dare: Sesampaste + Sojasauce + Reisessig – zu Gemüse',
+  'Sparsam würzen: Teppanyaki lebt von natürlichen Aromen',
+  'Fleur de Sel am Ende: Das Finishing-Salz macht den Unterschied',
+]},
+{ico:'🧹',col:'var(--tipps)',title:'Reinigung & Pflege',items:[
+  'Sofort nach dem Kochen reinigen – nie erkaltet',
+  'Heisse Platte + Wasser: Wasserdampf löst Rückstände – dann abschaben',
+  'Metallspatel zum Schaben – nie scharfe Klingen bei beschichteten Platten',
+  'Einbrennen bei Gusseisen: Öl einreiben, hocherhitzen, abwischen',
+  'Gusseisen nie mit Spülmittel reinigen – Einbrennung geht verloren',
+  'Nach Reinigung dünn einölen: verhindert Rost bei Gusseisen',
+  'Edelstahl: Mit Stahlwolle in Faserrichtung reinigen',
+  'Beschichtete Platten: Nur weiches Tuch, kein Metall',
+]},
+];
+
+/* ── FLEISCH & FISCH REZEPTE ────────────────────────── */
+const MEAT = [
+{n:'M01',ico:'🥩',title:'Wagyu Teppanyaki',sub:'Dünn geschnitten · Sojabutter · Perfekte Kruste',
+ kat:'rind',zeit:'8 Min',schwierigkeit:'einfach',
+ badges:[{c:'ty',t:'⚡ 8 Min'},{c:'tr',t:'🥩 Rind'},{c:'tw',t:'⭐ Premium'}],
+ zutaten:[['Wagyu oder Ribeye (dünn)','300 g'],['Butter','1 EL'],['Sojasauce','1 EL'],['Knoblauch (Scheiben)','2 Zehen'],['Fleur de Sel','nach Bedarf'],['Pfeffer','nach Bedarf']],
+ schritte:['Platte auf max. Hitze vorheizen (5 Min).','Butter + Knoblauchscheiben: 30 Sek anrösten bis goldgelb, beiseite schieben.','Fleisch in einem Layer auf die Platte – NICHT bewegen für 60 Sek.','Einmal wenden, 45 Sek. Kerntemperatur 55–58°C für medium.','Sojasauce am Rand der Platte entlanggiessen – Dampf und Aroma.','Fleur de Sel direkt aufs Fleisch.'],
+ tipp:'Wagyu hat viel Fett – kein extra Öl nötig. Fleisch dünn aufschneiden und NICHT übergart! Medium ist Pflicht.'},
+{n:'M02',ico:'🐔',title:'Teriyaki Hähnchenbrust',sub:'Teriyaki-Glaze · Sesam · Ingwer',
+ kat:'huhn',zeit:'12 Min',schwierigkeit:'einfach',
+ badges:[{c:'ty',t:'⚡ 12 Min'},{c:'tg',t:'🐔 Huhn'},{c:'tw',t:'💚 LDL-gut'}],
+ zutaten:[['Hähnchenbrust (dünn platiert)','400 g'],['Sojasauce','3 EL'],['Mirin','3 EL'],['Honig','1 EL'],['Sake','2 EL'],['Ingwer gerieben','1 TL'],['Sesamöl','½ TL'],['Sesam geröstet','1 EL'],['Frühlingszwiebeln','2']],
+ schritte:['Hähnchen auf 5mm plattieren. Sauce aus Soja+Mirin+Honig+Sake+Ingwer mischen.','30 Min marinieren (besser: über Nacht).','Platte auf mittlere Hitze, Rapsöl.','Hähnchen 4-5 Min pro Seite bis Kerntemperatur 74°C.','Restmarinade auf die Platte giessen – 2 Min einkochen und übers Fleisch.','Sesam + Frühlingszwiebeln drüber.'],
+ tipp:'Nicht zu heiss – Teriyaki-Sauce verbrennt schnell wegen Zucker. Mittlere Hitze!'},
+{n:'M03',ico:'🥩',title:'Gyudon-Style Beef',sub:'Zwiebeln · Dashi · Reiswein · Japanisch',
+ kat:'rind',zeit:'10 Min',schwierigkeit:'einfach',
+ badges:[{c:'ty',t:'⚡ 10 Min'},{c:'tr',t:'🥩 Rind'},{c:'tb',t:'🇯🇵 Japan'}],
+ zutaten:[['Rindfleisch (sehr dünn)','300 g'],['Zwiebel (halbe Ringe)','2'],['Dashi-Brühe','100 ml'],['Sojasauce','3 EL'],['Mirin','3 EL'],['Sake','2 EL'],['Zucker','1 TL'],['Ingwer gerieben','1 TL']],
+ schritte:['Zwiebeln auf mittlerer Hitze 5 Min weich anbraten, zur Seite.','Sauce mischen und auf die Platte: 2 Min einkochen.','Sehr dünnes Beef darin bei mittelhoher Hitze 2-3 Min garen.','Zwiebeln wieder dazu, alles vermengen.','Über Reis servieren mit rohem Ei obendrauf (Onsen-Tamago).','Ingwer und Frühlingszwiebeln als Topping.'],
+ tipp:'Das Fleisch muss wirklich DÜNN sein – vom Metzger hobeln lassen oder leicht eingefroren selbst schneiden.'},
+{n:'M04',ico:'🐖',title:'Schweinenacken Teppanyaki',sub:'Shio-Koji · Zitrone · Frühlingszwiebeln',
+ kat:'schwein',zeit:'10 Min',schwierigkeit:'einfach',
+ badges:[{c:'ty',t:'⚡ 10 Min'},{c:'tw',t:'🐖 Schwein'},{c:'tw',t:'Shio-Koji'}],
+ zutaten:[['Schweinenacken (dünn)','350 g'],['Shio-Koji (Salzmalz)','2 EL'],['Zitrone','½'],['Knoblauch','2 Zehen'],['Frühlingszwiebeln','3'],['Schwarzer Pfeffer','nach Bedarf']],
+ schritte:['Schweinenacken mit Shio-Koji einreiben, 1-2h marinieren (besser: 24h).','Platte auf hohe Hitze vorheizen, dünn einölen.','Fleisch 3-4 Min pro Seite – schöne Bräunung anstreben.','Knoblauchscheiben dazu in letzter Minute.','Zitronensaft direkt auf die Platte am Ende – Dampf!','Frühlingszwiebeln + Pfeffer zum Servieren.'],
+ tipp:'Shio-Koji ist ein Game-Changer: enzymiert das Fleisch und macht es unglaublich zart. Im Asialaden kaufen.'},
+{n:'M05',ico:'🦐',title:'Garnelenspieß Teppanyaki',sub:'Knoblauchbutter · Petersilie · Zitrone',
+ kat:'fisch',zeit:'6 Min',schwierigkeit:'einfach',
+ badges:[{c:'ty',t:'⚡ 6 Min'},{c:'tb',t:'🦐 Garnelen'},{c:'tg',t:'💚 LDL-gut'}],
+ zutaten:[['Garnelen L-Grösse (geschält)','400 g'],['Butter','40 g'],['Knoblauch','4 Zehen'],['Petersilie (gehackt)','3 EL'],['Zitrone','1'],['Chilliflocken','½ TL'],['Fleur de Sel','nach Bedarf']],
+ schritte:['Garnelen trocken tupfen – wichtig für Röstaroma.','Platte auf hohe Hitze, Butter schmelzen lassen.','Knoblauchscheiben 30 Sek goldgelb braten, zur Seite.','Garnelen in einem Layer, 90 Sek pro Seite – fertig wenn orangerot.','Knoblauch wieder dazu, Chilliflocken, Zitronensaft.','Petersilie + Fleur de Sel drüber.'],
+ tipp:'Garnelen werden schnell gummiartig! Sobald sie durchgekrümmt und orangerot sind – sofort runter. Maximal 3 Min gesamt.'},
+{n:'M06',ico:'🐟',title:'Lachs Teppanyaki',sub:'Misoglasur · Ingwer · Frühlingszwiebeln',
+ kat:'fisch',zeit:'10 Min',schwierigkeit:'einfach',
+ badges:[{c:'ty',t:'⚡ 10 Min'},{c:'tb',t:'🐟 Lachs'},{c:'tg',t:'💚 Omega-3'}],
+ zutaten:[['Lachsfilet (ohne Haut)','400 g'],['Miso (hell)','2 EL'],['Mirin','2 EL'],['Sojasauce','1 EL'],['Honig','1 TL'],['Ingwer gerieben','1 TL'],['Sesam','1 EL'],['Zitrone','½']],
+ schritte:['Miso + Mirin + Soja + Honig + Ingwer zur Glasur mischen.','Lachs damit 30 Min marinieren.','Platte mittlere-hohe Hitze, leicht einölen.','Lachs 3-4 Min pro Seite – Glasur karamellisiert.','Nicht zu lange! Lachs soll innen noch glasig sein.','Sesam + Zitrone + Frühlingszwiebeln.'],
+ tipp:'Miso-Glasuren verbrennen schnell wegen Zucker – immer mittlere Hitze. Lachs sollte innen noch leicht glasig sein für bestes Ergebnis.'},
+{n:'M07',ico:'🥩',title:'Bulgogi-Style Beef',sub:'Koreanisch · Birne · Sesam · Soja',
+ kat:'rind',zeit:'8 Min',schwierigkeit:'einfach',
+ badges:[{c:'ty',t:'⚡ 8 Min'},{c:'tr',t:'🥩 Rind'},{c:'tw',t:'🇰🇷 Korea'}],
+ zutaten:[['Rindfleisch (sehr dünn)','300 g'],['Birne (gerieben)','¼'],['Sojasauce','4 EL'],['Sesamöl','2 EL'],['Knoblauch','3 Zehen'],['Ingwer','1 TL'],['Zucker','1 EL'],['Sesam','1 EL'],['Frühlingszwiebeln','3']],
+ schritte:['Birne reiben und mit allen anderen Zutaten zur Marinade mischen.','Beef mindestens 1h marinieren, besser über Nacht.','Platte auf hohe Hitze. Kein extra Öl – Marinade enthält Sesamöl.','Fleisch portionsweise braten – nicht zu viel auf einmal.','2-3 Min unter häufigem Wenden.','Sesam + Frühlingszwiebeln.'],
+ tipp:'Die geriebene Birne enthält Enzyme die das Fleisch zart machen und eine natürliche Süsse geben. Kein Ersatz durch Apfel!'},
+{n:'M08',ico:'🐔',title:'Yakitori-Style Hähnchen',sub:'Tare-Sauce · Kohle-Aroma · Spieß-Style',
+ kat:'huhn',zeit:'15 Min',schwierigkeit:'mittel',
+ badges:[{c:'ty',t:'⏱ 15 Min'},{c:'tg',t:'🐔 Huhn'},{c:'tw',t:'🇯🇵 Yakitori'}],
+ zutaten:[['Hähnchenschenkel (ohne Knochen)','400 g'],['Sojasauce','4 EL'],['Mirin','4 EL'],['Sake','2 EL'],['Zucker','2 EL'],['Frühlingszwiebeln','4'],['Shichimi Togarashi','nach Bedarf']],
+ schritte:['Tare-Sauce: Soja + Mirin + Sake + Zucker 5 Min einkochen bis leicht dickflüssig.','Hähnchen in 3cm Würfel, auf Metallspieße stecken.','Platte mittlere-hohe Hitze, leicht einölen.','Spieße 10-12 Min wenden, nach 5 Min mit Tare-Sauce bepinseln.','Mehrfach glasieren für intensive Sauce.','Frühlingszwiebeln + Shichimi drüber.'],
+ tipp:'Tare-Sauce kann man auf Vorrat machen – hält 2 Wochen im Kühlschrank. Wiederholtes Glasieren ist der Schlüssel zum typischen Yakitori-Aroma.'},
+{n:'M09',ico:'🥩',title:'Steak Teppanyaki',sub:'Rinderlende · Knoblauchbutter · Ponzu',
+ kat:'rind',zeit:'10 Min',schwierigkeit:'mittel',
+ badges:[{c:'ty',t:'⏱ 10 Min'},{c:'tr',t:'🥩 Rind'},{c:'tw',t:'⭐ Restaurant'}],
+ zutaten:[['Rinderlende (2cm dick)','400 g'],['Butter','30 g'],['Knoblauch','3 Zehen'],['Rosmarin','2 Zweige'],['Fleur de Sel','nach Bedarf'],['Pfeffer','nach Bedarf'],['Ponzu-Sauce','zum Dippen']],
+ schritte:['Steak Raumtemperatur, trocken tupfen, stark salzen und pfeffern.','Platte max. Hitze, Rapsöl dünn.','Steak 2 Min pro Seite scharf anbraten – NICHT bewegen.','Hitze auf mittel, Butter + Knoblauch + Rosmarin dazu.','Steak damit arrosieren (Butter drübergießen) für 2 Min.','5 Min ruhen lassen bevor schneiden. Mit Ponzu servieren.'],
+ tipp:'Ruhezeit ist Pflicht! Während 5 Min Ruhe verteilt sich der Fleischsaft. Anschneiden vorher = ganzer Saft läuft raus.'},
+{n:'M10',ico:'🦑',title:'Tintenfisch Teppanyaki',sub:'Ingwer · Sojasauce · Grüne Zwiebeln',
+ kat:'fisch',zeit:'6 Min',schwierigkeit:'einfach',
+ badges:[{c:'ty',t:'⚡ 6 Min'},{c:'tb',t:'🦑 Meeresfrüchte'},{c:'tg',t:'💚 Proteinreich'}],
+ zutaten:[['Tintenfisch (geputzt, Tuben)','400 g'],['Sojasauce','2 EL'],['Mirin','1 EL'],['Ingwer (gerieben)','1 TL'],['Knoblauch','2 Zehen'],['Sesam','1 EL'],['Frühlingszwiebeln','3']],
+ schritte:['Tintenfischtuben einritzen (Rautenmuster) – verhindert Zusammenrollen.','Soja + Mirin + Ingwer zur Marinade, 15 Min einlegen.','Platte auf SEHR hohe Hitze.','Tintenfisch 2-3 Min maximal – länger = gummiartig!','Knoblauch in letzter Minute dazu.','Sesam + Frühlingszwiebeln sofort servieren.'],
+ tipp:'Einritzen ist wichtig: flach bleiben, schönes Muster, gleichmässiges Garen. Wirklich nur 2-3 Minuten – Tintenfisch ist sehr empfindlich!'},
+];
+
+/* ── GEMÜSE REZEPTE ─────────────────────────────────── */
+const VEG = [
+{n:'V01',ico:'🧄',title:'Knoblauch-Pilze Teppanyaki',sub:'Austernpilze · Butter · Sojasauce · Umami',
+ kat:'pilze',zeit:'8 Min',schwierigkeit:'einfach',
+ badges:[{c:'ty',t:'⚡ 8 Min'},{c:'tg',t:'🌱 Vegan'},{c:'tw',t:'Umami'}],
+ zutaten:[['Austernpilze','300 g'],['Shiitake','200 g'],['Butter','30 g'],['Knoblauch','4 Zehen'],['Sojasauce','2 EL'],['Frühlingszwiebeln','3'],['Sesam','1 EL'],['Petersilie','2 EL']],
+ schritte:['Pilze grob zupfen – nie waschen, nur abbürsten.','Platte auf hohe Hitze, Butter schmelzen.','Pilze in einem Layer – NICHT rühren für 2 Min (Röstaroma!).','Wenden, Knoblauch dazu, weitere 2 Min.','Sojasauce am Rand entlang giessen – Dampf und Aroma.','Frühlingszwiebeln + Sesam + Petersilie.'],
+ tipp:'Pilze nie waschen und nicht rühren! Nur so entsteht die perfekte goldbraune Kruste statt grauem Pilzbrei.'},
+{n:'V02',ico:'🥦',title:'Shishito & Gemüse-Mix',sub:'Paprika · Zucchini · Shishito · Miso-Dip',
+ kat:'mischung',zeit:'10 Min',schwierigkeit:'einfach',
+ badges:[{c:'ty',t:'⚡ 10 Min'},{c:'tg',t:'🌱 Vegan'},{c:'tw',t:'Miso-Dip'}],
+ zutaten:[['Shishito-Paprika','200 g'],['Zucchini (Scheiben)','1'],['Paprika bunt','2'],['Champignons','200 g'],['Rapsöl','2 EL'],['Sojasauce','1 EL'],['Miso','1 EL'],['Reisessig','1 TL'],['Sesamöl','½ TL']],
+ schritte:['Gemüse vorbereiten: Shishito ganz lassen, Zucchini 5mm Scheiben, Paprika Streifen.','Miso-Dip: Miso + Reisessig + Sesamöl + etwas Wasser verrühren.','Platte mittlere-hohe Hitze, Rapsöl.','Härteres Gemüse zuerst: Paprika 3 Min, dann Zucchini.','Shishito + Champignons dazu, 3-4 Min.','Sojasauce am Ende drüber.'],
+ tipp:'Shishito werden leicht schwarz – das ist gewollt! Die verkohlten Stellen geben Raucharoma. In eine heisse, trocke Platte geben für bestes Ergebnis.'},
+{n:'V03',ico:'🌽',title:'Yakiimo & Maiskölbchen',sub:'Süsskartoffel · Mais · Süss-Salzig · Butter',
+ kat:'wurzelgemüse',zeit:'15 Min',schwierigkeit:'einfach',
+ badges:[{c:'ty',t:'⏱ 15 Min'},{c:'tg',t:'🌱 Vegan'},{c:'tw',t:'Süss-Salzig'}],
+ zutaten:[['Süsskartoffel (5mm Scheiben)','2'],['Baby-Maiskölbchen','200 g'],['Butter','25 g'],['Honig','1 EL'],['Sojasosse','1 EL'],['Sesam','1 EL'],['Meeressalz','nach Bedarf']],
+ schritte:['Süsskartoffel in 5mm Scheiben, kurz in Microwave (3 Min) vorgaren.','Maiskölbchen halbieren.','Platte mittlere Hitze, Butter schmelzen.','Süsskartoffel 4-5 Min pro Seite goldbraun braten.','Mais dazu, 3-4 Min bis leicht gebräunt.','Honig + Sojasosse mischen, über alles giessen, 1 Min karamellisieren.'],
+ tipp:'Süsskartoffel immer vorgaren – sonst bleibt sie innen roh während aussen verbrennt. Microwelle für 3 Min rettet Zeit.'},
+{n:'V04',ico:'🧅',title:'Negi Yaki – Zwiebel-Spieß',sub:'Grüne Zwiebeln · Schweinebauch · Teriyaki',
+ kat:'zwiebeln',zeit:'12 Min',schwierigkeit:'einfach',
+ badges:[{c:'ty',t:'⏱ 12 Min'},{c:'tw',t:'🇯🇵 Klassiker'},{c:'tw',t:'Negi Yaki'}],
+ zutaten:[['Frühlingszwiebeln','8 Bunde'],['Schweinebauch (dünn)','200 g'],['Sojasauce','2 EL'],['Mirin','2 EL'],['Sake','1 EL'],['Zucker','½ TL'],['Sesam','1 EL']],
+ schritte:['Frühlingszwiebeln in 5cm Stücke schneiden.','Schweinebauchscheiben um je 2-3 Zwiebelstücke wickeln.','Teriyaki-Sauce: Soja + Mirin + Sake + Zucker erhitzen.','Platte mittlere-hohe Hitze, leicht einölen.','Spieße 8-10 Min braten, alle Seiten anbraten.','Mit Teriyaki-Sauce glasieren, Sesam drüber.'],
+ tipp:'Das klassische Izakaya-Gericht! Die Zwiebeln werden innen süss und weich während der Schweinebauch knusprig wird. Einfach aber unglaublich gut.'},
+{n:'V05',ico:'🍆',title:'Miso-Aubergine Dengaku',sub:'Dengaku-Miso · Sesam · Süss-Salzig',
+ kat:'aubergine',zeit:'12 Min',schwierigkeit:'einfach',
+ badges:[{c:'ty',t:'⏱ 12 Min'},{c:'tg',t:'🌱 Vegan'},{c:'tw',t:'Dengaku'}],
+ zutaten:[['Aubergine','2'],['Miso dunkel','2 EL'],['Mirin','2 EL'],['Sake','1 EL'],['Zucker','1 TL'],['Sesamöl','1 TL'],['Sesam geröstet','2 EL'],['Frühlingszwiebeln','3']],
+ schritte:['Aubergine halbieren, Schnittfläche rautenförmig einritzen.','Dengaku-Paste: Miso + Mirin + Sake + Zucker + Sesamöl mischen.','Platte mittlere Hitze, grosszügig Rapsöl.','Aubergine mit Schnittfläche nach unten 5 Min braten.','Wenden, Dengaku-Paste auf Schnittfläche geben.','Weitere 5 Min bis Paste karamellisiert. Sesam + Frühlingszwiebeln.'],
+ tipp:'Einritzen ist wichtig – die Aubergine saugt so das Öl und die Paste besser auf. Grosszügig Öl verwenden, Aubergine braucht viel davon.'},
+{n:'V06',ico:'🫑',title:'Korean BBQ Gemüse',sub:'Gochujang · Sesam · Süss-Scharf · Vegan',
+ kat:'mischung',zeit:'10 Min',schwierigkeit:'einfach',
+ badges:[{c:'ty',t:'⚡ 10 Min'},{c:'tg',t:'🌱 Vegan'},{c:'tr',t:'🌶️ Scharf'}],
+ zutaten:[['Paprika bunt','2'],['Zucchini','1'],['Champignons','200 g'],['Gochujang','1 EL'],['Sojasauce','2 EL'],['Sesamöl','1 EL'],['Honig','1 EL'],['Knoblauch','3 Zehen'],['Sesam','2 EL']],
+ schritte:['BBQ-Sauce: Gochujang + Soja + Sesamöl + Honig mischen.','Gemüse in gleichmässige Stücke schneiden.','Platte hohe Hitze, Rapsöl.','Paprika + Zucchini 4 Min, Champignons dazu weitere 3 Min.','Knoblauch in letzter Minute dazu.','BBQ-Sauce übers Gemüse, 1 Min karamellisieren.'],
+ tipp:'Die Sauce zuletzt damit sie nicht verbrennt. Gochujang verleiht Tiefe und Umami, nicht nur Schärfe – auch gut für Nicht-Schärfe-Fans in kleiner Menge.'},
+{n:'V07',ico:'🥕',title:'Yaki Yasai – Japanisches Bratveg',sub:'Karotte · Bohnen · Soja · Ingwer · Klassisch',
+ kat:'mischung',zeit:'10 Min',schwierigkeit:'einfach',
+ badges:[{c:'ty',t:'⚡ 10 Min'},{c:'tg',t:'🌱 Vegan'},{c:'tb',t:'🇯🇵 Klassisch'}],
+ zutaten:[['Karotten (Stifte)','2'],['Grüne Bohnen','200 g'],['Paprika gelb','1'],['Sojasosse','2 EL'],['Sake','1 EL'],['Ingwer gerieben','1 TL'],['Sesamöl','1 TL'],['Sesam','1 EL']],
+ schritte:['Karotten in dünne Stifte, Bohnen und Paprika in gleichmässige Stücke.','Sauce: Soja + Sake + Ingwer mischen.','Platte mittlere-hohe Hitze, Rapsöl.','Karotten zuerst 3 Min, dann Bohnen 2 Min, Paprika 2 Min.','Sauce über alles, 1 Min schwenken.','Sesamöl + Sesam am Ende.'],
+ tipp:'Gemüse nacheinander nach Garzeit dazugeben – alles soll gleichzeitig fertig sein. Sesamöl immer erst am Ende: es verbrennt sonst.'},
+{n:'V08',ico:'🧅',title:'Okonomiyaki-Kohl',sub:'Japonese-Style · Worcestershire · Kewpie',
+ kat:'kohl',zeit:'15 Min',schwierigkeit:'einfach',
+ badges:[{c:'ty',t:'⏱ 15 Min'},{c:'tg',t:'🌱 Vegetarisch'},{c:'tb',t:'🇯🇵 Okonomiyaki'}],
+ zutaten:[['Weissweisse','¼'],['Karotten','1'],['Frühlingszwiebeln','4'],['Eier','3'],['Mehl','80 g'],['Dashi oder Wasser','100 ml'],['Worcestershire-Sauce','2 EL'],['Kewpie Mayo','nach Bedarf'],['Aonori','nach Bedarf']],
+ schritte:['Kohl fein schneiden, Karotten raspeln, Frühlingszwiebeln in Ringe.','Teig: Mehl + Dashi + Eier vermischen. Gemüse dazu.','Platte mittlere Hitze, grosszügig Öl.','Teig als Pfannkuchen (1,5cm dick) auf Platte giessen.','5-6 Min pro Seite, Deckel drauf wenn vorhanden.','Worcestershire-Sauce + Kewpie Mayo in Linien, Aonori drüber.'],
+ tipp:'Okonomiyaki bedeutet "wie du magst" – perfektes Resteessen! Alles was im Kühlschrank ist kann rein. Deckel drauf für gleichmässiges Garen.'},
+];
+
+/* ── EIER REZEPTE ─────────────────────────────────────────── */
+const EGGS = [
+{n:'E01',ico:'🍳',title:'Teppanyaki Rührei',sub:'Cremig · Scallions · Butter · Perfekt',
+ kat:'rührei',zeit:'4 Min',schwierigkeit:'einfach',
+ badges:[{c:'ty',t:'⚡ 4 Min'},{c:'tg',t:'🥚 Eier'},{c:'tw',t:'Cremig'}],
+ zutaten:[['Eier','4'],['Butter','20 g'],['Milch oder Sahne','2 EL'],['Frühlingszwiebeln','2'],['Fleur de Sel','nach Bedarf'],['Pfeffer','nach Bedarf'],['optional: Kewpie Mayo','½ TL']],
+ schritte:['Eier + Milch + Salz verquirlen.','Platte auf NIEDRIGE Hitze (wichtig!), Butter schmelzen.','Eiermasse giessen.','Mit breitem Spatel langsam von aussen nach innen schieben – stocken lassen.','Immer wieder schieben bevor komplett fest – weich abstellen.','Frühlingszwiebeln + Pfeffer. Optional: Kewpie Maya unterheben für extra Cremigkeit.'],
+ tipp:'Das Geheimnis: NIEDRIGE Hitze und nicht hetzen! Rührei von der Teppanyaki-Platte ist cremiger als jedes Pfannenrührei wegen der gleichmässigen Hitze.'},
+{n:'E02',ico:'🍳',title:'Teppanyaki Spiegelei',sub:'Knusprige Ränder · Weicher Dotter · Perfekt',
+ kat:'spiegelei',zeit:'3 Min',schwierigkeit:'einfach',
+ badges:[{c:'ty',t:'⚡ 3 Min'},{c:'tg',t:'🥚 Eier'},{c:'tw',t:'Klassisch'}],
+ zutaten:[['Eier','2-4'],['Butter','15 g'],['Fleur de Sel','nach Bedarf'],['Pfeffer nach Bedarf',''],['optional: Sojasauce','Tropfen'],['optional: Sesam','Prise']],
+ schritte:['Platte mittlere Hitze, Butter schmelzen bis leicht braun (nussig).','Eier vorsichtig einzeln aufschlagen.','Für knusprige Ränder: heisseres Fett mit Löffel über das Egg drizzlen.','Dotter soll weich bleiben: ca. 2 Min bis Weiss gestockt.','Sofort servieren.','Optional: Tropfen Sojasauce + Sesam für japanische Note.'],
+ tipp:'Braune Butter (beurre noisette) gibt dem Spiegelei unglaubliches Nussaroma. Die Teppanyaki-Platte ist ideal weil der Rand gleichmässig crispy wird.'},
+{n:'E03',ico:'🥚',title:'Tamagoyaki – Japanisches Omelett',sub:'Süsslich · Gerollt · Mirin · Klassisch',
+ kat:'omelett',zeit:'10 Min',schwierigkeit:'mittel',
+ badges:[{c:'ty',t:'⏱ 10 Min'},{c:'tg',t:'🥚 Eier'},{c:'tb',t:'🇯🇵 Klassisch'},{c:'tw',t:'⭐ Technik'}],
+ zutaten:[['Eier','4'],['Dashi oder Wasser','4 EL'],['Sojasauce','1 TL'],['Mirin','1 EL'],['Zucker','1 TL'],['Salz','Prise'],['Rapsöl','zum Einpinseln']],
+ schritte:['Eier + Dashi + Soja + Mirin + Zucker + Salz verquirlen.','Platte mittlere Hitze, dünn einölen.','¼ der Eiermasse giessen, verteilen, halb stocken lassen.','Mit Spatel von einer Seite her aufrollen.','Rolle zur Seite schieben, Platte wieder einölen.','Nächste ¼ Eiermasse unter die Rolle fliessen lassen, wieder aufrollen. Wiederholen.'],
+ tipp:'Üben macht den Meister! Tamagoyaki braucht Geduld. Profi-Tipp: mit feuchtem Tuch formen während warm. Ergebnis sollte fluffig-süsslich sein.'},
+{n:'E04',ico:'🥚',title:'Omu-Rice Teppanyaki',sub:'Gebratener Reis · Omelett-Mantel · Ketchup',
+ kat:'omelett',zeit:'15 Min',schwierigkeit:'mittel',
+ badges:[{c:'ty',t:'⏱ 15 Min'},{c:'tg',t:'🥚 Eier'},{c:'tw',t:'🇯🇵 Yoshoku'}],
+ zutaten:[['Gekochter Reis (kalt)','2 Portionen'],['Eier','4'],['Hähnchenbruststreifen','150 g'],['Zwiebel','½'],['Ketchup','3 EL'],['Sojasauce','1 EL'],['Butter','25 g'],['Erbsen','50 g']],
+ schritte:['Hähnchen + Zwiebel anbraten 3-4 Min, zur Seite.','Kalten Reis auf die Platte, mit Spatel aufbrechen und anbraten 3 Min.','Hähnchen zurück, Ketchup + Soja dazu, alles vermischen. Beiseite halten.','4 Eier verquirlen, auf die Platte giessen, rühren bis halb gestockt.','Reis auf eine Seite des Eies, Omelett drumherum formen.','Auf Teller stürzen, mit Ketchup dekorieren.'],
+ tipp:'Omu-Rice ist das Comfort Food Japans! Das Omelett soll aussen gestockt aber innen noch cremig sein. Beim Stürzen auf den Teller formt es sich von selbst.'},
+{n:'E05',ico:'🍳',title:'Kimchi-Ei Teppanyaki',sub:'Kimchi · Spiegelei · Sesam · Koreaninspiriert',
+ kat:'rührei',zeit:'7 Min',schwierigkeit:'einfach',
+ badges:[{c:'ty',t:'⚡ 7 Min'},{c:'tr',t:'🌶️ Scharf'},{c:'tw',t:'🇰🇷 Korea'}],
+ zutaten:[['Eier','3'],['Kimchi','100 g'],['Frühlingszwiebeln','2'],['Sesamöl','½ TL'],['Sesam','1 TL'],['Gochugaru (optional)','½ TL'],['Sojasauce','½ TL']],
+ schritte:['Kimchi ausdrücken, grob hacken.','Platte mittlere Hitze, Rapsöl.','Kimchi 2-3 Min braten bis leicht karamellisiert.','Eier direkt in die Kimchi-Pfütze aufschlagen.','Dotter weich lassen, Weiss komplett stocken.','Sesamöl + Sesam + Frühlingszwiebeln. Optional: Gochugaru für mehr Schärfe.'],
+ tipp:'Kimchi beim Braten karamellisiert und wird süsslich – der beste Kimchi den du je gegessen hast. Sojasauce sparsam: Kimchi ist schon salzig.'},
+{n:'E06',ico:'🥚',title:'Dashimaki Tamago',sub:'Dashi-Omelett · Zart · Viereckig · Profi',
+ kat:'omelett',zeit:'12 Min',schwierigkeit:'schwer',
+ badges:[{c:'ty',t:'⏱ 12 Min'},{c:'tg',t:'🥚 Eier'},{c:'tb',t:'🇯🇵 Profi'},{c:'tw',t:'⭐ Technik'}],
+ zutaten:[['Eier','6'],['Dashi-Brühe','80 ml'],['Sojasauce','2 TL'],['Mirin','2 TL'],['Zucker','1 EL'],['Salz','Prise'],['Rapsöl','zum Einpinseln']],
+ schritte:['Eier + Dashi + Soja + Mirin + Zucker + Salz gründlich verquirlen.','Platte niedrige-mittlere Hitze, dünn einölen.','Wenig Eiermasse giessen, verteilen.','Halbgestockt von einer Seite zur anderen aufrollen.','Rolle beiseite, wieder einölen, neue Lage draufgiessen.','6-7 Mal wiederholen. Mit Bambusmatte formen.'],
+ tipp:'Dashimaki Tamago ist die Königsdisziplin! Viel Dashi macht es extrem zart und saftig. Mit einer Bambus-Rolmatte nach dem Rollen formen – ergibt das klassische rechteckige Format.'},
+{n:'E07',ico:'🍳',title:'Scrambled Eggs mit Trüffelöl',sub:'Cremig · Trüffelöl · Schnittlauch · Luxus',
+ kat:'rührei',zeit:'5 Min',schwierigkeit:'einfach',
+ badges:[{c:'ty',t:'⚡ 5 Min'},{c:'tg',t:'🥚 Eier'},{c:'tw',t:'⭐ Luxus'}],
+ zutaten:[['Eier','4'],['Butter','25 g'],['Crème fraîche','1 EL'],['Trüffelöl','½ TL'],['Schnittlauch','2 EL'],['Fleur de Sel','nach Bedarf'],['Weisser Pfeffer','nach Bedarf']],
+ schritte:['Eier + Crème fraîche + Salz verquirlen.','Platte auf ALLERNIEDRIGSTE Hitze, Butter schmelzen.','Eiermasse giessen, sehr langsam mit Spatel schieben.','8-10 Minuten lang: immer wieder von aussen schieben, Hitze extrem niedrig.','Vom Herd wenn noch leicht flüssig: Resthitze gartfertig.','Trüffelöl + Schnittlauch + Fleur de Sel.'],
+ tipp:'Gordon Ramsay-Style: Die Geduld beim langsamen Garen macht den Unterschied. Ergebnis: Cremige, zarte Wolken aus Ei – das beste Rührei der Welt.'},
+];
+
+/* ── PFANNKUCHEN & TEIG ─────────────────────────────── */
+const PANCAKES = [
+{n:'P01',ico:'🥞',title:'Japanese Soufflé Pancakes',sub:'Ultra-fluffig · Luftig · Meringue-Style',
+ kat:'japanisch',zeit:'20 Min',schwierigkeit:'mittel',
+ badges:[{c:'ty',t:'⏱ 20 Min'},{c:'tg',t:'🥞 Pancakes'},{c:'tw',t:'⭐ Fluffig'}],
+ zutaten:[['Eier','3 (getrennt)'],['Mehl','50 g'],['Backpulver','½ TL'],['Zucker','30 g'],['Milch','30 ml'],['Vanille','½ TL'],['Butter zum Braten','nach Bedarf'],['Puderzucker zum Servieren','']],
+ schritte:['Eiweiss mit Zucker zu festem Schnee schlagen.','Eigelb + Milch + Vanille verquirlen, Mehl + Backpulver unterheben.','Eischnee vorsichtig unter Eigelb-Masse heben (nicht rühren – Luft erhalten!).','Platte niedrige Hitze, Butter. Ringe aus Backpapier (5cm hoch) aufstellen.','Teig in Ringe giessen (¾ voll), Deckel drauf oder Schüssel darüber.','12-15 Min bis aufgegangen und gestockt. Sehr vorsichtig wenden, 5 Min.'],
+ tipp:'Diese Pancakes sind 3× so dick wie normale! Der Schlüssel: Eischnee NIE über-rühren und immer einen Deckel für den Dampf. Sofort servieren – sie fallen sonst zusammen.'},
+{n:'P02',ico:'🥞',title:'Buttermilch Pancakes',sub:'Amerikanisch · Knusprig · Fluffig · Klassisch',
+ kat:'amerikanisch',zeit:'15 Min',schwierigkeit:'einfach',
+ badges:[{c:'ty',t:'⏱ 15 Min'},{c:'tg',t:'🥞 Pancakes'},{c:'tw',t:'🇺🇸 USA'}],
+ zutaten:[['Mehl','200 g'],['Backpulver','2 TL'],['Natron','½ TL'],['Zucker','2 EL'],['Salz','½ TL'],['Buttermilch','250 ml'],['Eier','2'],['Butter geschmolzen','40 g'],['Vanille','1 TL']],
+ schritte:['Trockenes: Mehl + Backpulver + Natron + Zucker + Salz vermischen.','Feuchtes: Buttermilch + Eier + Butter + Vanille verquirlen.','Zusammenführen: nur kurz rühren bis gerade eben verbunden – Klumpen erlaubt!','Platte mittlere Hitze, Butter.','Teig (80ml pro Pancake) giessen, bis Blasen entstehen (3 Min).','Einmal wenden, 2 Min. Niemals drücken!'],
+ tipp:'NIEMALS den Teig glatt rühren – Klumpen sind gewollt! Übermischen macht Pancakes zäh. Blasen auf der Oberfläche = perfekter Zeitpunkt zum Wenden.'},
+{n:'P03',ico:'🥞',title:'Okonomiyaki Pancake',sub:'Japanischer Kohl-Pancake · Herzhaft · Sauce',
+ kat:'japanisch',zeit:'20 Min',schwierigkeit:'einfach',
+ badges:[{c:'ty',t:'⏱ 20 Min'},{c:'tg',t:'🥞 Pancakes'},{c:'tb',t:'🇯🇵 Japan'},{c:'tw',t:'Herzhaft'}],
+ zutaten:[['Weissweisse','¼ Kopf'],['Mehl','100 g'],['Dashi oder Wasser','120 ml'],['Eier','3'],['Frühlingszwiebeln','4'],['optional: Schweinebauch','150 g'],['Worcestershire-Sauce','2 EL'],['Kewpie Mayo','nach Bedarf'],['Aonori & Katsuobushi','nach Bedarf']],
+ schritte:['Kohl sehr fein schneiden. Mehl + Dashi + Eier zu Teig verrühren.','Kohl + Frühlingszwiebeln unter Teig heben.','Platte mittlere Hitze, Öl grosszügig.','Teig als dicken Pancake (2cm) aufgiessen, Schweinebauch obendrauf legen.','Deckel 5-7 Min. Vorsichtig wenden, weitere 5-7 Min.','Worcestershire + Kewpie in Gittern drüber, Aonori + Katsuobushi.'],
+ tipp:'Okonomiyaki hält sich zusammen durch den Kohl – kein Mehl überdosieren. Die Katsuobushi-Flocken tanzen durch die Hitze des frischen Pancakes – das ist Kunst und Essen in einem!'},
+{n:'P04',ico:'🫔',title:'Crêpes Teppanyaki',sub:'Dünn · Zitrone · Zucker · Klassisch',
+ kat:'crepe',zeit:'20 Min',schwierigkeit:'einfach',
+ badges:[{c:'ty',t:'⏱ 20 Min'},{c:'tg',t:'🥞 Pancakes'},{c:'tw',t:'🇫🇷 Klassisch'}],
+ zutaten:[['Mehl','125 g'],['Eier','3'],['Milch','300 ml'],['Butter (geschmolzen)','30 g'],['Zucker','1 EL'],['Vanille','½ TL'],['Salz','Prise'],['Butter zum Braten','nach Bedarf']],
+ schritte:['Alle Zutaten zu glattem Teig verquirlen. 30 Min ruhen lassen.','Platte auf mittlere-hohe Hitze.','Kleines Stück Butter schmelzen.','Teig (80ml) giessen und sofort mit Spatel in einer Kreisbewegung dünn verstreichen.','2 Min bis Rand goldbraun, dann wenden, 1 Min.','Falten oder rollen, mit Zitrone + Zucker oder Nutella servieren.'],
+ tipp:'Die flache Teppanyaki-Platte ist IDEAL für Crêpes – viel Platz, gleichmässige Hitze. Der Teig muss ruhen damit Gluten sich entspannt. Erster Crêpe ist immer der Probelauf – weg damit!'},
+{n:'P05',ico:'🥞',title:'Scallion Pancakes (Cong You Bing)',sub:'Chinesisch · Frühlingszwiebeln · Flockig',
+ kat:'asiatisch',zeit:'20 Min',schwierigkeit:'mittel',
+ badges:[{c:'ty',t:'⏱ 20 Min'},{c:'tg',t:'🥞 Pancakes'},{c:'tb',t:'🇨🇳 China'},{c:'tw',t:'Flockig'}],
+ zutaten:[['Mehl','200 g'],['Heisses Wasser','110 ml'],['Sesamöl','2 EL'],['Frühlingszwiebeln','6'],['Salz','1 TL'],['Rapsöl zum Braten','']],
+ schritte:['Mehl + heisses Wasser zu Teig verkneten, 30 Min ruhen.','Teig dünn ausrollen, Sesamöl drauf verteilen.','Grosszügig Salz + fein gehackte Frühlingszwiebeln drauf.','Eng aufrollen, Rolle zu Schnecke aufwickeln.','Schnecke nochmals dünn ausrollen (5mm).','Platte hohe Hitze, viel Öl, 3 Min pro Seite goldbraun.'],
+ tipp:'Das Aufrollen und Wiederausrollen schafft die typischen Schichten – wie bei Blätterteig. Heiß servieren wenn noch knusprig. Dazu: Soja + Reisessig als Dip.'},
+{n:'P06',ico:'🥞',title:'Banana Pancakes',sub:'Banane · Zimt · Karamell · Wochenende',
+ kat:'süss',zeit:'15 Min',schwierigkeit:'einfach',
+ badges:[{c:'ty',t:'⏱ 15 Min'},{c:'tg',t:'🥞 Pancakes'},{c:'tw',t:'🍌 Süss'}],
+ zutaten:[['Reife Bananen','2'],['Eier','2'],['Mehl','100 g'],['Milch','100 ml'],['Backpulver','1 TL'],['Zimt','½ TL'],['Honig','1 EL'],['Butter','25 g'],['optinal: Schlagsahne','']],
+ schritte:['Bananen zerdrücken. Eier + Milch + Honig + Zimt dazu.','Mehl + Backpulver unterrühren.','Platte mittlere Hitze, Butter.','Pancakes (70ml) giessen, 3 Min bis Blasen entstehen.','Wenden, 2 Min.','Mit Honig + Bananenscheiben + Sahne servieren. Optional: Karamellsauce.'],
+ tipp:'Reife (fast schwarze) Bananen geben mehr Süsse und Geschmack. Keine extra Butter nötig wenn Banane sehr reif. Diese Pancakes sind von Natur aus glutenarm möglich mit Reismehl.'},
+{n:'P07',ico:'🥞',title:'Buchweizen Galette',sub:'Herzhaft · Käse · Schinken · Bretonisch',
+ kat:'herzhaft',zeit:'20 Min',schwierigkeit:'einfach',
+ badges:[{c:'ty',t:'⏱ 20 Min'},{c:'tg',t:'🥞 Pancakes'},{c:'tw',t:'🇫🇷 Bretagne'},{c:'tw',t:'Herzhaft'}],
+ zutaten:[['Buchweizenmehl','150 g'],['Wasser','300 ml'],['Ei','1'],['Salz','½ TL'],['Butter','20 g'],['Emmentaler gerieben','100 g'],['Gekochter Schinken','4 Scheiben'],['Eier zum Belegen','4']],
+ schritte:['Buchweizenmehl + Wasser + Ei + Salz verrühren. 1h ruhen.','Platte mittlere-hohe Hitze, Butter.','Teig dünn ausgiessen wie Crêpe.','Käse + Schinken auf ¾ der Fläche verteilen.','Ei aufschlagen und in die Mitte setzen.','Ränder einfalten, Deckel kurz drüber, bis Ei gestockt.'],
+ tipp:'Galette bretonne ist glutenfrei und herzhaft – ideal als Frühstück oder Lunch. Buchweizens nussiges Aroma passt perfekt zu Käse und Ei. Komplett glutenfrei mit reinem Buchweizenmehl.'},
+];
+
+/* ── FUSION & SPEZIALITÄTEN ─────────────────────────── */
+const SPECIALS = [
+{n:'S01',ico:'🍜',title:'Teppanyaki Yakisoba',sub:'Wok-Nudeln · Soja · Gemüse · Schwein',
+ kat:'nudeln',zeit:'12 Min',schwierigkeit:'einfach',
+ badges:[{c:'ty',t:'⏱ 12 Min'},{c:'tw',t:'🇯🇵 Klassiker'},{c:'tw',t:'Yakisoba'}],
+ zutaten:[['Yakisoba-Nudeln (vorgekocht)','400 g'],['Schweinebauch (dünn)','200 g'],['Kohl','200 g'],['Karotten','1'],['Zwibel','1'],['Worcestershire','3 EL'],['Sojasauce','1 EL'],['Ketchup','1 EL'],['Oyster Sauce','1 EL'],['Beni Shoga','nach Bedarf'],['Aonori','nach Bedarf']],
+ schritte:['Yakisoba-Sauce mischen: Worcestershire + Soja + Ketchup + Oyster Sauce.','Platte hohe Hitze, Öl. Schweinebauch 2 Min braten, beiseite.','Zwiebel + Kohl + Karotten 3-4 Min braten.','Nudeln dazu, 2 EL Wasser draufgiessen (Dampf!), Nudeln aufbrechen.','Sauce + Schweinebauch zurück, alles gut vermischen.','Beni Shoga (rotes Ingwer) + Aonori drüber.'],
+ tipp:'Das Wasser ist der Trick – es entsteht Dampf der die Nudeln gleichmässig gart und trennt ohne zu verkleben. Yakisoba-Nudeln vorher kurz mit heissem Wasser übergießen zum Lösen.'},
+{n:'S02',ico:'🍚',title:'Teppanyaki Fried Rice',sub:'Gebratener Reis · Kalter Reis · Eier · Soja',
+ kat:'reis',zeit:'10 Min',schwierigkeit:'einfach',
+ badges:[{c:'ty',t:'⚡ 10 Min'},{c:'tw',t:'🇯🇵 Klassiker'},{c:'tg',t:'Resteessen'}],
+ zutaten:[['Kalter Reis (vom Vortag)','3 Portionen'],['Eier','3'],['Frühlingszwiebeln','4'],['Sojasosse','3 EL'],['Sesamöl','1 TL'],['Knoblauch','2 Zehen'],['optional: Hähnchen/Shrimps','150 g'],['Erdnussöl','2 EL']],
+ schritte:['Platte max. Hitze, Erdnussöl.','Protein (falls verwendet) 3 Min anbraten, beiseite schieben.','Kalten Reis auf die heisse Platte – mit Spatel aufbrechen und flach drücken.','3-4 Min nicht rühren (Röstaroma!), dann auflockern.','Mitte frei machen, Eier hinein, schnell verquirlen.','Alles zusammen, Soja + Sesamöl + Knoblauch + Frühlingszwiebeln.'],
+ tipp:'KALTER Reis ist Pflicht! Frischer Reis klebt und wird matschig. Vom Vortag = perfekte trockene Körner die einzeln braten. Die Teppanyaki-Platte ist dafür ideal – viel Fläche!'},
+{n:'S03',ico:'🧀',title:'Teppanyaki Raclette-Style',sub:'Käse · Kartoffeln · Gewürzgurken · Alpine',
+ kat:'käse',zeit:'15 Min',schwierigkeit:'einfach',
+ badges:[{c:'ty',t:'⏱ 15 Min'},{c:'tw',t:'🧀 Käse'},{c:'tw',t:'Alpine-Style'}],
+ zutaten:[['Raclette-Käse (Scheiben)','300 g'],['Kleine Kartoffeln (vorgekocht)','500 g'],['Gewürzgurken','nach Bedarf'],['Silberzwiebeln','nach Bedarf'],['Rohschinken','100 g'],['Paprikapulver','nach Bedarf'],['Pfeffer aus der Mühle','']],
+ schritte:['Kartoffeln halbieren (vorgekochen!).','Platte mittlere Hitze, leicht einölen.','Kartoffeln 5-6 Min braten bis goldbraun.','Käsescheiben direkt auf die Platte legen – 1-2 Min bis geschmolzen und leicht gebräunt.','Käse mit Spatel direkt über Kartoffeln schieben.','Rohschinken kurz anbraten. Gurken + Silberzwiebeln als Beilage.'],
+ tipp:'Die Teppanyaki-Platte ist grandios für Raclette! Der Käse schmilzt gleichmässig und bekommt eine leichte Kruste. Mit dem Spatel direkt übers Essen schieben wie im Restaurant.'},
+{n:'S04',ico:'🌯',title:'Korean BBQ Wrap Party',sub:'Ssam · Schweinebauch · Knoblauch · Salat',
+ kat:'korean',zeit:'20 Min',schwierigkeit:'einfach',
+ badges:[{c:'ty',t:'⏱ 20 Min'},{c:'tr',t:'🇰🇷 Korean BBQ'},{c:'tw',t:'Ssam-Style'}],
+ zutaten:[['Schweinebauch (2-3mm Scheiben)','500 g'],['Salat-Blätter','1 Kopf'],['Knoblauch (Scheiben)','1 Knollbie'],['Gochujang','3 EL'],['Sesamöl','1 EL'],['Zucker','1 TL'],['Sesam','2 EL'],['Kimchi','zum Beilegen'],['Gedämpfter Reis',''],['Frühlingszwiebelsalat','']],
+ schritte:['Gochujang + Sesamöl + Zucker + Sesam zur Ssam-Sauce mischen.','Platte max. Hitze, kein Öl (Schweinebauch hat genug Fett).','Schweinebauch-Scheiben 2-3 Min pro Seite goldbraun-knusprig.','Knoblauchscheiben mitbraten bis goldgelb.','Am Tisch servieren: jeder wickelt selbst.','Anleitung: Salatblatt + Reis + Fleisch + Knoblauch + Kimchi + Sauce = falten und essen!'],
+ tipp:'Korean BBQ am Tisch ist ein Erlebnis! Schweinebauch braucht kein Öl – sein Fett ist mehr als genug. Knoblauchscheiben braten bis goldgelb = unglaublich aromatisch und mild.'},
+{n:'S05',ico:'🍕',title:'Teppanyaki Pizza Fladenbrot',sub:'Crispy · Käse · Schnelle Fladenbrot-Pizza',
+ kat:'bread',zeit:'10 Min',schwierigkeit:'einfach',
+ badges:[{c:'ty',t:'⚡ 10 Min'},{c:'tw',t:'Fusion'},{c:'tw',t:'Crispy'}],
+ zutaten:[['Fladenbrot oder Tortilla','2'],['Tomatensauce','4 EL'],['Mozzarella gerieben','150 g'],['Toppings nach Wahl',''],['Rapsöl','1 EL'],['Basilikum frisch','nach Bedarf'],['Fleur de Sel','']],
+ schritte:['Platte mittlere Hitze, leicht einölen.','Fladenbrot auf die Platte, Unterseite 2 Min kross machen.','Wenden, sofort Tomatensauce + Käse + Toppings drauf.','Deckel oder Schüssel drüber für 3-4 Min bis Käse geschmolzen.','Rausnehmen, Basilikum + Fleur de Sel.','Sofort in Stücke schneiden und essen.'],
+ tipp:'Teppanyaki-Pizza ist schneller als jeder Ofen! Die flache Hitze macht den Boden perfekt crispy während der Deckel den Käse schmilzt. Tortillas geben die crispigsten Ergebnisse.'},
+{n:'S06',ico:'🥗',title:'Teppanyaki Halloumi',sub:'Zypern-Käse · Honig · Chilli · Perfekt gegrillt',
+ kat:'vegetarisch',zeit:'8 Min',schwierigkeit:'einfach',
+ badges:[{c:'ty',t:'⚡ 8 Min'},{c:'tg',t:'🌱 Vegetarisch'},{c:'tw',t:'Halloumi'}],
+ zutaten:[['Halloumi','400 g'],['Honig','2 EL'],['Chilliflocken','½ TL'],['Zitrone','1'],['Minze','2 EL'],['Olivenöl','1 EL'],['Schwarzer Pfeffer',''],['Granatapfelkerne optional','']],
+ schritte:['Halloumi in 1cm Scheiben.','Platte hohe Hitze, dünn Olivenöl.','Halloumi-Scheiben 2 Min pro Seite – goldbraune Kruste.','Nicht bewegen während der Kruste-Bildung!','Honig + Chilliflocken über den heissen Käse giessen.','Zitronensaft + Minze + Pfeffer. Sofort servieren.'],
+ tipp:'Halloumi wird bei Hitze nicht flüssig – perfekt für die Teppanyaki-Platte! Muss sehr heiss gegessen werden: erkaltet wird er gummig. Honig-Chili-Kombination ist ein Game-Changer.'},
+{n:'S07',ico:'🥩',title:'Teppanyaki Tacos',sub:'Steak + Zwiebeln · Tortilla · Guacamole',
+ kat:'fusion',zeit:'15 Min',schwierigkeit:'einfach',
+ badges:[{c:'ty',t:'⏱ 15 Min'},{c:'tw',t:'🌮 Fusion'},{c:'tr',t:'🥩 Steak'}],
+ zutaten:[['Flanksteak','300 g'],['Zwiebeln (Streifen)','2'],['Paprika','1'],['Kleine Tortillas','6'],['Guacamole',''],['Salsa',''],['Limette','1'],['Koriander',''],['Cumin','1 TL'],['Paprikapulver','1 TL']],
+ schritte:['Steak mit Cumin + Paprikapulver + Salz würzen, 15 Min ruhen.','Platte max. Hitze.','Steak 3-4 Min pro Seite für medium – ruhen lassen!','Zwiebeln + Paprika auf der Platte 5 Min karamellisieren.','Tortillas kurz auf der Platte anwärmen.','Steak dünn aufschneiden, in Tortillas mit allem servieren.'],
+ tipp:'Flanksteak immer GEGEN die Faser schneiden – sonst zäh. Auf der heissen Teppanyaki-Platte bekommt es die perfekte Kruste. Taco-Abend mit der ganzen Familie an der Platte!'},
+];
+
+</script>
+
+<script>
+/* ═══════════════════════════════════════════
+   NAVIGATION
+═══════════════════════════════════════════ */
+function show(page, btn) {
+  var pages = document.querySelectorAll('.page');
+  for (var i = 0; i < pages.length; i++) pages[i].classList.remove('active');
+  var navBtns = document.querySelectorAll('.nb');
+  for (var i = 0; i < navBtns.length; i++) navBtns[i].classList.remove('on');
+  var pg = document.getElementById('page-' + page);
+  if (pg) pg.classList.add('active');
+  var nb = btn || document.querySelector('.nb[data-p="' + page + '"]');
+  if (nb) nb.classList.add('on');
+  window.scrollTo(0, 0);
+}
+
+function tog(card) { card.classList.toggle('open'); }
+
+/* ═══════════════════════════════════════════
+   PORTIONS
+═══════════════════════════════════════════ */
+function chgPor(btn, delta) {
+  var bar = btn.parentElement;
+  var cur = parseInt(bar.getAttribute('data-cur')) || 2;
+  var base = parseInt(bar.getAttribute('data-base')) || 2;
+  cur = Math.max(1, Math.min(12, cur + delta));
+  bar.setAttribute('data-cur', cur);
+  bar.querySelector('.por-val').textContent = cur;
+  var ratio = cur / base;
+  var card = bar;
+  while (card && !card.classList.contains('card')) card = card.parentElement;
+  if (!card) return;
+  var tds = card.querySelectorAll('td.amt');
+  for (var i = 0; i < tds.length; i++) {
+    var td = tds[i];
+    var orig = td.getAttribute('data-orig') || td.textContent;
+    td.setAttribute('data-orig', orig);
+    var m = orig.match(/^([0-9.,]+)\s*(.*)$/);
+    if (m) {
+      var n = parseFloat(m[1].replace(',', '.'));
+      if (!isNaN(n)) {
+        var nv = Math.round(n * ratio * 10) / 10;
+        td.textContent = (nv === Math.floor(nv) ? nv : nv.toFixed(1)) + (m[2] ? ' ' + m[2] : '');
+        continue;
+      }
+    }
+    td.textContent = orig;
+  }
+}
+
+/* ═══════════════════════════════════════════
+   BUILDERS
+═══════════════════════════════════════════ */
+function mkTable(rows) {
+  if (!rows || !rows.length) return '';
+  var h = '';
+  for (var i = 0; i < rows.length; i++)
+    h += '<tr><td>' + (rows[i][0]||'') + '</td><td class="amt">' + (rows[i][1]||'') + '</td></tr>';
+  return h;
+}
+function mkSteps(steps) {
+  if (!steps || !steps.length) return '';
+  var h = '';
+  for (var i = 0; i < steps.length; i++) h += '<li>' + steps[i] + '</li>';
+  return h;
+}
+function mkTags(tags) {
+  if (!tags || !tags.length) return '';
+  var h = '';
+  for (var i = 0; i < tags.length; i++) {
+    var t = tags[i];
+    if (typeof t === 'string') h += '<span class="tag tw">' + t + '</span>';
+    else h += '<span class="tag ' + (t.c||'tw') + '">' + (t.t||'') + '</span>';
+  }
+  return h;
+}
+function mkPor(base) {
+  return '<div class="portions" data-base="' + base + '" data-cur="' + base + '">'
+    + '<span class="por-lbl">🍽️ Portionen</span>'
+    + '<button class="por-btn" onclick="chgPor(this,-1)">−</button>'
+    + '<span class="por-val">' + base + '</span>'
+    + '<button class="por-btn" onclick="chgPor(this,+1)">+</button>'
+    + '</div>';
+}
+function mkCard(ico, title, sub, tags, body, num) {
+  var el = document.createElement('div');
+  el.className = 'card';
+  var numHtml = num ? '<span class="rnum">' + num + '</span>' : '';
+  el.innerHTML =
+    '<div class="card-hd">'
+    + '<div class="card-ico">' + ico + '</div>'
+    + '<div class="card-inf">'
+    + '<div class="card-title">' + numHtml + title + '</div>'
+    + '<div class="card-sub">' + sub + '</div>'
+    + '<div class="card-tags">' + tags + '</div>'
+    + '</div><span class="card-chev">▾</span></div>'
+    + '<div class="card-bd"><div class="card-in">' + body + '</div></div>';
+  (function(c){ c.querySelector('.card-hd').addEventListener('click', function(){ tog(c); }); })(el);
+  return el;
+}
+function setF(barId, btn) {
+  var bar = document.getElementById(barId);
+  if (!bar) return;
+  var bs = bar.querySelectorAll('.fbtn');
+  for (var i = 0; i < bs.length; i++) bs[i].classList.remove('on');
+  btn.classList.add('on');
+}
+function updCount(id, vis, total) {
+  var el = document.getElementById(id);
+  if (el) el.innerHTML = vis < total ? '<b>' + vis + '</b> von ' + total + ' Rezepten' : '';
+}
+
+/* ═══════════════════════════════════════════
+   GUIDE
+═══════════════════════════════════════════ */
+function renderGuide() {
+  var w = document.getElementById('guide-wrap');
+  var colors = [
+    'var(--fire)','var(--egg)','var(--green)','var(--gold)',
+    'var(--blue)','var(--purple)','var(--red)'
+  ];
+  for (var i = 0; i < GUIDE.length; i++) {
+    var t = GUIDE[i];
+    var col = t.col || colors[i % colors.length];
+    var items = '';
+    for (var j = 0; j < t.items.length; j++)
+      items += '<div class="tip-item"><span class="tip-num" style="color:' + col + '">' + (j+1) + '</span><span>' + t.items[j] + '</span></div>';
+    var box = document.createElement('div');
+    box.className = 'tip-box';
+    box.innerHTML = '<div class="tip-box-hd"><span class="tbi">' + t.ico + '</span><span class="tbt" style="color:' + col + '">' + t.title + '</span><span class="tip-box-chev">▾</span></div><div class="tip-box-bd">' + items + '</div>';
+    (function(b){ b.querySelector('.tip-box-hd').addEventListener('click', function(){ b.classList.toggle('open'); }); })(box);
+    w.appendChild(box);
+  }
+}
+
+/* ═══════════════════════════════════════════
+   MEAT / FISH
+═══════════════════════════════════════════ */
+var MST = {kat:'alle', ldl:'alle'};
+function mf(dim, val, btn) { MST[dim]=val; setF('mf-'+dim,btn); applyMeat(); }
+function applyMeat() {
+  var vis = 0;
+  var cards = document.querySelectorAll('#meat-grid .card');
+  for (var i = 0; i < cards.length; i++) {
+    var r = MEAT[parseInt(cards[i].getAttribute('data-i'))];
+    if (!r) continue;
+    var ok = (MST.kat==='alle' || r.kat===MST.kat)
+          && (MST.ldl==='alle' || r.ldl_ok===true);
+    cards[i].style.display = ok ? '' : 'none';
+    if (ok) vis++;
+  }
+  var em = document.getElementById('meat-empty');
+  if (em) em.style.display = vis===0 ? '' : 'none';
+  updCount('meat-count', vis, MEAT.length);
+}
+function renderMeat() {
+  var g = document.getElementById('meat-grid');
+  for (var i = 0; i < MEAT.length; i++) {
+    var r = MEAT[i];
+    var tags = mkTags(r.badges||[]);
+    var body = mkPor(2)
+      + '<span class="dev-badge">⏱ ' + r.zeit + '</span>'
+      + '<span class="dev-badge">📊 ' + r.schwierigkeit + '</span>'
+      + '<div class="lbl">Zutaten</div><table>' + mkTable(r.zutaten) + '</table>'
+      + '<div class="lbl">Zubereitung</div><ol>' + mkSteps(r.schritte) + '</ol>'
+      + '<div class="tip">💡 ' + r.tipp + '</div>';
+    var card = mkCard(r.ico, r.title, r.sub, tags, body, r.n);
+    card.setAttribute('data-i', i);
+    g.appendChild(card);
+  }
+}
+
+/* ═══════════════════════════════════════════
+   VEG
+═══════════════════════════════════════════ */
+var VST = {kat:'alle'};
+function vf(dim, val, btn) { VST[dim]=val; setF('vf-'+dim,btn); applyVeg(); }
+function applyVeg() {
+  var cards = document.querySelectorAll('#veg-grid .card');
+  for (var i = 0; i < cards.length; i++) {
+    var r = VEG[parseInt(cards[i].getAttribute('data-i'))];
+    if (!r) continue;
+    cards[i].style.display = (VST.kat==='alle' || r.kat===VST.kat) ? '' : 'none';
+  }
+}
+function renderVeg() {
+  var g = document.getElementById('veg-grid');
+  for (var i = 0; i < VEG.length; i++) {
+    var r = VEG[i];
+    var tags = mkTags(r.badges||[]);
+    var body = mkPor(2)
+      + '<span class="dev-badge">⏱ ' + r.zeit + '</span>'
+      + '<div class="lbl">Zutaten</div><table>' + mkTable(r.zutaten) + '</table>'
+      + '<div class="lbl">Zubereitung</div><ol>' + mkSteps(r.schritte) + '</ol>'
+      + '<div class="tip">💡 ' + r.tipp + '</div>';
+    var card = mkCard(r.ico, r.title, r.sub, tags, body, r.n);
+    card.setAttribute('data-i', i);
+    g.appendChild(card);
+  }
+}
+
+/* ═══════════════════════════════════════════
+   EGGS
+═══════════════════════════════════════════ */
+var EST = {kat:'alle'};
+function ef(dim, val, btn) { EST[dim]=val; setF('ef-'+dim,btn); applyEggs(); }
+function applyEggs() {
+  var cards = document.querySelectorAll('#eggs-grid .card');
+  for (var i = 0; i < cards.length; i++) {
+    var r = EGGS[parseInt(cards[i].getAttribute('data-i'))];
+    if (!r) continue;
+    cards[i].style.display = (EST.kat==='alle' || r.kat===EST.kat) ? '' : 'none';
+  }
+}
+function renderEggs() {
+  var g = document.getElementById('eggs-grid');
+  for (var i = 0; i < EGGS.length; i++) {
+    var r = EGGS[i];
+    var tags = mkTags(r.badges||[]);
+    var body = mkPor(2)
+      + '<span class="dev-badge">⏱ ' + r.zeit + '</span>'
+      + '<span class="dev-badge">📊 ' + r.schwierigkeit + '</span>'
+      + '<div class="lbl">Zutaten</div><table>' + mkTable(r.zutaten) + '</table>'
+      + '<div class="lbl">Zubereitung</div><ol>' + mkSteps(r.schritte) + '</ol>'
+      + '<div class="tip">💡 ' + r.tipp + '</div>';
+    var card = mkCard(r.ico, r.title, r.sub, tags, body, r.n);
+    card.setAttribute('data-i', i);
+    g.appendChild(card);
+  }
+}
+
+/* ═══════════════════════════════════════════
+   PANCAKES
+═══════════════════════════════════════════ */
+var PST = {kat:'alle'};
+function pf(dim, val, btn) { PST[dim]=val; setF('pf-'+dim,btn); applyPan(); }
+function applyPan() {
+  var cards = document.querySelectorAll('#pan-grid .card');
+  for (var i = 0; i < cards.length; i++) {
+    var r = PANCAKES[parseInt(cards[i].getAttribute('data-i'))];
+    if (!r) continue;
+    cards[i].style.display = (PST.kat==='alle' || r.kat===PST.kat) ? '' : 'none';
+  }
+}
+function renderPan() {
+  var g = document.getElementById('pan-grid');
+  for (var i = 0; i < PANCAKES.length; i++) {
+    var r = PANCAKES[i];
+    var tags = mkTags(r.badges||[]);
+    var body = mkPor(2)
+      + '<span class="dev-badge">⏱ ' + r.zeit + '</span>'
+      + '<span class="dev-badge">📊 ' + r.schwierigkeit + '</span>'
+      + '<div class="lbl">Zutaten</div><table>' + mkTable(r.zutaten) + '</table>'
+      + '<div class="lbl">Zubereitung</div><ol>' + mkSteps(r.schritte) + '</ol>'
+      + '<div class="tip">💡 ' + r.tipp + '</div>';
+    var card = mkCard(r.ico, r.title, r.sub, tags, body, r.n);
+    card.setAttribute('data-i', i);
+    g.appendChild(card);
+  }
+}
+
+/* ═══════════════════════════════════════════
+   SPECIALS
+═══════════════════════════════════════════ */
+var SST = {kat:'alle'};
+function sf(dim, val, btn) { SST[dim]=val; setF('sf-'+dim,btn); applySpecial(); }
+function applySpecial() {
+  var cards = document.querySelectorAll('#special-grid .card');
+  for (var i = 0; i < cards.length; i++) {
+    var r = SPECIALS[parseInt(cards[i].getAttribute('data-i'))];
+    if (!r) continue;
+    cards[i].style.display = (SST.kat==='alle' || r.kat===SST.kat) ? '' : 'none';
+  }
+}
+function renderSpecial() {
+  var g = document.getElementById('special-grid');
+  for (var i = 0; i < SPECIALS.length; i++) {
+    var r = SPECIALS[i];
+    var tags = mkTags(r.badges||[]);
+    var body = mkPor(2)
+      + '<span class="dev-badge">⏱ ' + r.zeit + '</span>'
+      + '<div class="lbl">Zutaten</div><table>' + mkTable(r.zutaten) + '</table>'
+      + '<div class="lbl">Zubereitung</div><ol>' + mkSteps(r.schritte) + '</ol>'
+      + '<div class="tip">💡 ' + r.tipp + '</div>';
+    var card = mkCard(r.ico, r.title, r.sub, tags, body, r.n);
+    card.setAttribute('data-i', i);
+    g.appendChild(card);
+  }
+}
+
+/* ═══════════════════════════════════════════
+   RANDOM
+═══════════════════════════════════════════ */
+function openRandom() {
+  var opts = [
+    {page:'meat',   grid:'meat-grid',    data:function(){ return MEAT; }},
+    {page:'veg',    grid:'veg-grid',     data:function(){ return VEG; }},
+    {page:'eggs',   grid:'eggs-grid',    data:function(){ return EGGS; }},
+    {page:'pan',    grid:'pan-grid',     data:function(){ return PANCAKES; }},
+    {page:'special',grid:'special-grid', data:function(){ return SPECIALS; }},
+  ];
+  var o = opts[Math.floor(Math.random() * opts.length)];
+  show(o.page);
+  setTimeout(function() {
+    var cards = document.querySelectorAll('#' + o.grid + ' .card');
+    if (cards.length) {
+      var card = cards[Math.floor(Math.random() * cards.length)];
+      card.classList.add('open');
+      card.scrollIntoView({behavior:'smooth', block:'center'});
+    }
+  }, 250);
+}
+
+/* ═══════════════════════════════════════════
+   MARK LDL FRIENDLY
+═══════════════════════════════════════════ */
+(function() {
+  if (typeof MEAT === 'undefined') return;
+  for (var i = 0; i < MEAT.length; i++) {
+    var r = MEAT[i];
+    if (r.badges) for (var j = 0; j < r.badges.length; j++) {
+      var t = r.badges[j].t || '';
+      if (t.indexOf('LDL') >= 0 || t.indexOf('Omega') >= 0) { r.ldl_ok = true; break; }
+    }
+  }
+})();
+
+/* ═══════════════════════════════════════════
+   INIT
+═══════════════════════════════════════════ */
+function init() {
+  renderGuide();
+  renderMeat();
+  renderVeg();
+  renderEggs();
+  renderPan();
+  renderSpecial();
+}
+init();
+
+</script>
+
+</body>
+</html>
