@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
 <meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
 <meta name="apple-mobile-web-app-title" content="Teppanyaki">
 <meta name="theme-color" content="#0c0c10">
 <title>🔥 Teppanyaki Guide</title>
@@ -32,7 +32,7 @@
 }
 *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
 html{background:var(--bg)}
-body{background:var(--bg);color:var(--text);font-family:"Nunito Sans",sans-serif;font-size:15px;min-height:100%;padding-bottom:calc(60px + var(--safe-bottom));-webkit-font-smoothing:antialiased}
+body{background:var(--bg);color:var(--text);font-family:"Nunito Sans",sans-serif;font-size:15px;min-height:100%;padding-bottom:calc(62px + var(--safe-bottom));-webkit-font-smoothing:antialiased}
 
 /* ─ PAGES ─ */
 .page{display:none}
@@ -219,7 +219,7 @@ ol li strong{color:var(–text)}
 .home-title .l3{color:var(–gold)}
 .home-sub{font-size:.76rem;color:var(–muted);line-height:1.7;max-width:280px;margin:0 auto 22px}
 .home-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;width:100%;max-width:340px}
-.hc{background:var(–card);border:1.5px solid var(–bdr);border-radius:12px;padding:14px 10px;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:5px;transition:transform .13s,border-color .13s}
+.hc{background:var(–card);border:2px solid var(–bdr);border-radius:12px;padding:14px 10px;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:5px;transition:transform .13s,border-color .13s}
 .hc:active{transform:scale(.96)}
 .hc .hi{font-size:1.65rem}
 .hc .ht{font-family:-apple-system, BlinkMacSystemFont, “SF Pro Display”, “Helvetica Neue”, sans-serif;font-weight:800;font-size:.72rem;color:var(–text)}
@@ -321,6 +321,22 @@ ol li::before { font-size: .68rem !important; min-width: 24px !important; height
 .tip-box { border-color: rgba(255,122,66,.2) !important; }
 .tip-box.open { border-color: rgba(255,122,66,.5) !important; }
 .tip-box-hd .tbt { font-size: .84rem !important; }
+
+/* HOME CARDS STRONGER */
+.hc { background: #16161e !important; }
+.hc.c1 { border-color: rgba(255,122,66,.5) !important; background: linear-gradient(135deg,#1e1814,#16161e) !important; }
+.hc.c2 { border-color: rgba(255,85,71,.5) !important;  background: linear-gradient(135deg,#1e1514,#16161e) !important; }
+.hc.c3 { border-color: rgba(58,232,85,.5) !important;  background: linear-gradient(135deg,#141e15,#16161e) !important; }
+.hc.c4 { border-color: rgba(255,212,85,.5) !important; background: linear-gradient(135deg,#1e1c14,#16161e) !important; }
+.hc.c5 { border-color: rgba(56,190,216,.5) !important; background: linear-gradient(135deg,#141c1e,#16161e) !important; }
+.hc.c6 { border-color: rgba(204,107,255,.5) !important;background: linear-gradient(135deg,#1a1420,#16161e) !important; }
+.hc:active { transform: scale(.96) !important; }
+.hc .ht { font-size: .78rem !important; font-weight: 800 !important; }
+.hc .hi { font-size: 1.8rem !important; }
+/* Home title more colorful */
+.home-title .l2 { color: #FF7A42 !important; }
+.home-title .l3 { color: #FFE030 !important; }
+.home-sub { color: #a0a0bc !important; font-size: .79rem !important; }
 
 </style>
 </head>
