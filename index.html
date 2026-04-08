@@ -9,21 +9,21 @@
 <meta name="apple-mobile-web-app-title" content="Teppanyaki">
 <meta name="theme-color" content="#0c0c10">
 <title>🔥 Teppanyaki Guide</title>
-<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+
 <link rel="apple-touch-icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMjAgMTIwIj48cmVjdCB3aWR0aD0iMTIwIiBoZWlnaHQ9IjEyMCIgcng9IjI2IiBmaWxsPSIjMGMwYzEwIi8+PHRleHQgeD0iNjAiIHk9IjUwIiBmb250LXNpemU9IjQwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkb21pbmFudC1iYXNlbGluZT0ibWlkZGxlIj7wn5SlPC90ZXh0PjxyZWN0IHg9IjIwIiB5PSI3NiIgd2lkdGg9IjgwIiBoZWlnaHQ9IjUiIHJ4PSIyLjUiIGZpbGw9IiNGRjZCMzUiIG9wYWNpdHk9IjAuOSIvPjxyZWN0IHg9IjIwIiB5PSI4NiIgd2lkdGg9IjU1IiBoZWlnaHQ9IjQiIHJ4PSIyIiBmaWxsPSIjRkZENjBBIiBvcGFjaXR5PSIwLjgiLz48cmVjdCB4PSIyMCIgeT0iOTUiIHdpZHRoPSI2OCIgaGVpZ2h0PSI0IiByeD0iMiIgZmlsbD0iIzMyRDc0QiIgb3BhY2l0eT0iMC42Ii8+PC9zdmc+">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMjAgMTIwIj48cmVjdCB3aWR0aD0iMTIwIiBoZWlnaHQ9IjEyMCIgcng9IjI2IiBmaWxsPSIjMGMwYzEwIi8+PHRleHQgeD0iNjAiIHk9IjUwIiBmb250LXNpemU9IjQwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkb21pbmFudC1iYXNlbGluZT0ibWlkZGxlIj7wn5SlPC90ZXh0PjxyZWN0IHg9IjIwIiB5PSI3NiIgd2lkdGg9IjgwIiBoZWlnaHQ9IjUiIHJ4PSIyLjUiIGZpbGw9IiNGRjZCMzUiIG9wYWNpdHk9IjAuOSIvPjxyZWN0IHg9IjIwIiB5PSI4NiIgd2lkdGg9IjU1IiBoZWlnaHQ9IjQiIHJ4PSIyIiBmaWxsPSIjRkZENjBBIiBvcGFjaXR5PSIwLjgiLz48cmVjdCB4PSIyMCIgeT0iOTUiIHdpZHRoPSI2OCIgaGVpZ2h0PSI0IiByeD0iMiIgZmlsbD0iIzMyRDc0QiIgb3BhY2l0eT0iMC42Ii8+PC9zdmc+">
 <style>
 :root {
-  --bg:#0c0c10; --card:#181820; --card2:#1e1e28; --bdr:#2a2a38;
-  --text:#f0ede8; --muted:#6a6a80; --soft:#9898b0;
-  --fire:#FF6B35;   /* main orange-fire accent */
-  --gold:#FFD60A;   /* yellow / meat */
-  --green:#32D74B;  /* veg / LDL */
-  --blue:#64D2FF;   /* tipps / fish */
-  --red:#FF453A;    /* scharf / hot */
-  --purple:#BF5AF2; /* special / fusion */
-  --egg:#FFC940;    /* eggs warm yellow */
-  --pan:#30B0C7;    /* pancakes teal */
+  --bg:#090910; --card:#14141c; --card2:#1a1a24; --bdr:#28283a;
+  --text:#f8f5f0; --muted:#8a8aa8; --soft:#b2b2cc;
+  --fire:#FF7A42;   /* main orange-fire accent */
+  --gold:#FFE030;   /* yellow / meat */
+  --green:#3AE855;  /* veg / LDL */
+  --blue:#72D8FF;   /* tipps / fish */
+  --red:#FF5547;    /* scharf / hot */
+  --purple:#CC6BFF; /* special / fusion */
+  --egg:#FFD455;    /* eggs warm yellow */
+  --pan:#38BED8;    /* pancakes teal */
   /* section accents */
   --c-guide:#FF6B35; --c-meat:#FF453A; --c-veg:#32D74B;
   --c-eggs:#FFC940;  --c-pan:#30B0C7;  --c-special:#BF5AF2;
@@ -65,10 +65,10 @@ body{background:var(--bg);color:var(--text);font-family:"Nunito Sans",sans-serif
 
 /* ─ HERO ─ */
 .hero{border-bottom:1px solid var(–bdr)}
-.hero-bar{display:flex;justify-content:space-between;padding:5px 16px;font-family:“Nunito”,sans-serif;font-size:.57rem;font-weight:800;letter-spacing:.22em;text-transform:uppercase;color:#000}
+.hero-bar{display:flex;justify-content:space-between;padding:5px 16px;font-family:-apple-system, BlinkMacSystemFont, “SF Pro Display”, “Helvetica Neue”, sans-serif;font-size:.57rem;font-weight:800;letter-spacing:.22em;text-transform:uppercase;color:#000}
 .hero-body{padding:18px 16px 20px;position:relative;overflow:hidden}
 .hero-body::before{content:attr(data-emoji);position:absolute;right:-12px;bottom:-20px;font-size:110px;opacity:.06;pointer-events:none;transform:rotate(12deg)}
-.hero-title{font-family:“Nunito”,sans-serif;font-weight:900;font-size:clamp(2rem,9vw,3.8rem);line-height:.88;text-transform:uppercase;letter-spacing:-.02em;color:var(–text)}
+.hero-title{font-family:-apple-system, BlinkMacSystemFont, “SF Pro Display”, “Helvetica Neue”, sans-serif;font-weight:900;font-size:clamp(2rem,9vw,3.8rem);line-height:.88;text-transform:uppercase;letter-spacing:-.02em;color:var(–text)}
 .hero-title em{font-style:normal}
 .hero-sub{font-size:.73rem;color:var(–muted);margin-top:8px;line-height:1.6}
 .hero-pills{display:flex;gap:6px;flex-wrap:wrap;margin-top:10px}
@@ -100,7 +100,7 @@ body{background:var(--bg);color:var(--text);font-family:"Nunito Sans",sans-serif
 @media(min-width:520px){.grid{display:grid;grid-template-columns:1fr 1fr}}
 
 /* ─ CARD ─ */
-.card{background:var(–card);border:1.5px solid var(–bdr);border-radius:14px;overflow:hidden;cursor:pointer;transition:border-color .15s;position:relative}
+.card{background:var(–card);border:2px solid var(–bdr);border-radius:14px;overflow:hidden;cursor:pointer;transition:border-color .15s;position:relative}
 .card::before{content:’’;position:absolute;left:0;top:0;bottom:0;width:4px;border-radius:4px 0 0 4px}
 .sec-meat    .card::before{background:var(–c-meat)}
 .sec-veg     .card::before{background:var(–c-veg)}
@@ -116,7 +116,7 @@ body{background:var(--bg);color:var(--text);font-family:"Nunito Sans",sans-serif
 .card-hd{padding:12px 13px 12px 16px;display:flex;align-items:center;gap:10px;user-select:none}
 .card-ico{font-size:1.35rem;width:40px;height:40px;background:var(–card2);border-radius:9px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
 .card-inf{flex:1;min-width:0}
-.card-title{font-family:“Nunito”,sans-serif;font-weight:800;font-size:.88rem;color:var(–text);line-height:1.2}
+.card-title{font-family:-apple-system, BlinkMacSystemFont, “SF Pro Display”, “Helvetica Neue”, sans-serif;font-weight:800;font-size:.88rem;color:var(–text);line-height:1.2}
 .card-sub{font-size:.65rem;color:var(–muted);margin-top:2px;line-height:1.4}
 .card-tags{display:flex;gap:4px;flex-wrap:wrap;margin-top:5px}
 .tag{font-size:.55rem;padding:2px 7px;border-radius:99px;font-weight:700;letter-spacing:.04em;border:1px solid transparent}
@@ -136,7 +136,7 @@ body{background:var(--bg);color:var(--text);font-family:"Nunito Sans",sans-serif
 .card-in{padding:13px 14px 18px 16px;border-top:1px solid var(–bdr)}
 
 /* recipe number */
-.rnum{display:inline-block;font-family:“Nunito”,sans-serif;font-weight:900;font-size:.58rem;padding:1px 6px;border-radius:5px;margin-right:5px;vertical-align:middle}
+.rnum{display:inline-block;font-family:-apple-system, BlinkMacSystemFont, “SF Pro Display”, “Helvetica Neue”, sans-serif;font-weight:900;font-size:.58rem;padding:1px 6px;border-radius:5px;margin-right:5px;vertical-align:middle}
 .sec-meat    .rnum{background:rgba(255,69,58,.18);color:var(–c-meat)}
 .sec-veg     .rnum{background:rgba(50,215,75,.16);color:var(–c-veg)}
 .sec-eggs    .rnum{background:rgba(255,201,64,.16);color:var(–c-eggs)}
@@ -147,7 +147,7 @@ body{background:var(--bg);color:var(--text);font-family:"Nunito Sans",sans-serif
 .portions{display:flex;align-items:center;gap:8px;background:var(–card2);border:1.5px solid var(–bdr);border-radius:9px;padding:6px 12px;margin-bottom:12px}
 .por-lbl{font-size:.62rem;font-weight:700;color:var(–muted);flex:1}
 .por-btn{background:var(–bdr);border:none;color:var(–text);width:28px;height:28px;border-radius:7px;font-size:1.1rem;font-weight:800;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0}
-.por-val{font-family:“Nunito”,sans-serif;font-weight:900;font-size:1.1rem;min-width:22px;text-align:center}
+.por-val{font-family:-apple-system, BlinkMacSystemFont, “SF Pro Display”, “Helvetica Neue”, sans-serif;font-weight:900;font-size:1.1rem;min-width:22px;text-align:center}
 .sec-meat    .por-val{color:var(–c-meat)}
 .sec-veg     .por-val{color:var(–c-veg)}
 .sec-eggs    .por-val{color:var(–c-eggs)}
@@ -178,9 +178,9 @@ td.amt{font-weight:800;text-align:right;padding-left:8px;white-space:nowrap}
 .sec-special td.amt{color:var(–c-special)}
 
 ol{list-style:none;counter-reset:step;padding:0}
-ol li{counter-increment:step;display:flex;gap:9px;font-size:.76rem;color:var(–muted);line-height:1.55;padding:6px 0;border-bottom:1px solid var(–bdr)}
+ol li{counter-increment:step;display:flex;gap:9px;font-size:.78rem;color:var(–soft);line-height:1.55;padding:6px 0;border-bottom:1px solid var(–bdr)}
 ol li:last-child{border-bottom:none}
-ol li::before{content:counter(step);font-family:“Nunito”,sans-serif;font-weight:900;font-size:.65rem;min-width:22px;height:22px;border-radius:6px;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;color:#000}
+ol li::before{content:counter(step);font-family:-apple-system, BlinkMacSystemFont, “SF Pro Display”, “Helvetica Neue”, sans-serif;font-weight:900;font-size:.65rem;min-width:22px;height:22px;border-radius:6px;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;color:#000}
 .sec-meat    ol li::before{background:var(–c-meat);color:#fff}
 .sec-veg     ol li::before{background:var(–c-veg)}
 .sec-eggs    ol li::before{background:var(–c-eggs)}
@@ -188,7 +188,7 @@ ol li::before{content:counter(step);font-family:“Nunito”,sans-serif;font-wei
 .sec-special ol li::before{background:var(–c-special);color:#fff}
 ol li strong{color:var(–text)}
 
-.tip{margin-top:10px;padding:8px 11px;font-size:.71rem;color:var(–muted);line-height:1.55;border-left:3px solid var(–bdr);border-radius:0 6px 6px 0;background:var(–card2)}
+.tip{margin-top:10px;padding:9px 12px;font-size:.73rem;color:var(–soft);line-height:1.55;border-left:3px solid var(–bdr);border-radius:0 6px 6px 0;background:var(–card2)}
 .sec-meat    .tip{border-left-color:var(–c-meat)}
 .sec-veg     .tip{border-left-color:var(–c-veg)}
 .sec-eggs    .tip{border-left-color:var(–c-eggs)}
@@ -201,19 +201,19 @@ ol li strong{color:var(–text)}
 .tip-box{background:var(–card);border:1.5px solid var(–bdr);border-radius:14px;overflow:hidden;margin-bottom:8px}
 .tip-box-hd{padding:13px 14px;display:flex;align-items:center;gap:9px;background:var(–card2);cursor:pointer;border-bottom:1px solid var(–bdr)}
 .tip-box-hd .tbi{font-size:1.25rem}
-.tip-box-hd .tbt{font-family:“Nunito”,sans-serif;font-weight:800;font-size:.8rem;flex:1}
+.tip-box-hd .tbt{font-family:-apple-system, BlinkMacSystemFont, “SF Pro Display”, “Helvetica Neue”, sans-serif;font-weight:800;font-size:.8rem;flex:1}
 .tip-box-chev{font-size:.7rem;color:var(–muted);transition:transform .22s;flex-shrink:0}
 .tip-box.open .tip-box-chev{transform:rotate(180deg)}
 .tip-box-bd{max-height:0;overflow:hidden;transition:max-height .35s ease}
 .tip-box.open .tip-box-bd{max-height:800px}
-.tip-item{display:flex;gap:9px;padding:8px 14px;font-size:.73rem;color:var(–muted);line-height:1.5;border-bottom:1px solid var(–bdr)}
+.tip-item{display:flex;gap:9px;padding:8px 14px;font-size:.75rem;color:var(–soft);line-height:1.5;border-bottom:1px solid var(–bdr)}
 .tip-item:last-child{border-bottom:none}
-.tip-num{font-family:“Nunito”,sans-serif;font-weight:900;min-width:18px;font-size:.64rem;margin-top:1px;flex-shrink:0}
+.tip-num{font-family:-apple-system, BlinkMacSystemFont, “SF Pro Display”, “Helvetica Neue”, sans-serif;font-weight:900;min-width:18px;font-size:.64rem;margin-top:1px;flex-shrink:0}
 
 /* ─ HOME ─ */
 .home-wrap{min-height:calc(100vh - 62px);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:28px 18px;text-align:center;position:relative;overflow:hidden}
 .home-wrap::before{content:“🔥”;position:absolute;font-size:240px;opacity:.04;top:50%;left:50%;transform:translate(-50%,-55%);pointer-events:none}
-.home-title{font-family:“Nunito”,sans-serif;font-weight:900;font-size:clamp(2.4rem,10vw,4.5rem);line-height:.86;text-transform:uppercase;letter-spacing:-.02em;margin-bottom:10px}
+.home-title{font-family:-apple-system, BlinkMacSystemFont, “SF Pro Display”, “Helvetica Neue”, sans-serif;font-weight:900;font-size:clamp(2.4rem,10vw,4.5rem);line-height:.86;text-transform:uppercase;letter-spacing:-.02em;margin-bottom:10px}
 .home-title .l1{color:var(–text)}
 .home-title .l2{color:var(–fire)}
 .home-title .l3{color:var(–gold)}
@@ -222,7 +222,7 @@ ol li strong{color:var(–text)}
 .hc{background:var(–card);border:1.5px solid var(–bdr);border-radius:12px;padding:14px 10px;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:5px;transition:transform .13s,border-color .13s}
 .hc:active{transform:scale(.96)}
 .hc .hi{font-size:1.65rem}
-.hc .ht{font-family:“Nunito”,sans-serif;font-weight:800;font-size:.72rem;color:var(–text)}
+.hc .ht{font-family:-apple-system, BlinkMacSystemFont, “SF Pro Display”, “Helvetica Neue”, sans-serif;font-weight:800;font-size:.72rem;color:var(–text)}
 .hc .hs{font-size:.57rem;color:var(–muted)}
 .hc.c1{border-color:rgba(255,107,53,.3)}
 .hc.c2{border-color:rgba(255,69,58,.3)}
@@ -230,12 +230,12 @@ ol li strong{color:var(–text)}
 .hc.c4{border-color:rgba(255,201,64,.3)}
 .hc.c5{border-color:rgba(48,176,199,.3)}
 .hc.c6{border-color:rgba(191,90,242,.3);grid-column:1/-1;flex-direction:row;justify-content:center;gap:12px}
-.random-btn{margin-top:16px;display:flex;align-items:center;gap:8px;background:var(–card);border:1.5px solid var(–bdr);border-radius:99px;padding:9px 20px;font-family:“Nunito”,sans-serif;font-size:.76rem;font-weight:800;color:var(–soft);cursor:pointer;transition:all .13s}
+.random-btn{margin-top:16px;display:flex;align-items:center;gap:8px;background:var(–card);border:1.5px solid var(–bdr);border-radius:99px;padding:9px 20px;font-family:-apple-system, BlinkMacSystemFont, “SF Pro Display”, “Helvetica Neue”, sans-serif;font-size:.76rem;font-weight:800;color:var(–soft);cursor:pointer;transition:all .13s}
 .random-btn:active{background:var(–card2);transform:scale(.97)}
 
 /* ─ SDIV ─ */
 .sdiv{display:flex;align-items:center;gap:10px;padding:14px 14px 8px;max-width:720px;margin:0 auto}
-.sdiv-t{font-family:“Nunito”,sans-serif;font-weight:800;font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;white-space:nowrap}
+.sdiv-t{font-family:-apple-system, BlinkMacSystemFont, “SF Pro Display”, “Helvetica Neue”, sans-serif;font-weight:800;font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;white-space:nowrap}
 .sec-guide   .sdiv-t{color:var(–c-guide)}
 .sec-meat    .sdiv-t{color:var(–c-meat)}
 .sec-veg     .sdiv-t{color:var(–c-veg)}
@@ -248,8 +248,81 @@ ol li strong{color:var(–text)}
 .rcount{font-size:.63rem;color:var(–muted);padding:3px 14px 6px;max-width:720px;margin:0 auto}
 .rcount b{color:var(–text)}
 .empty{text-align:center;padding:40px 20px;color:var(–muted);font-size:.8rem;line-height:1.7}
-</style>
 
+/* ══ READABILITY BOOST ══════════════════════════════ */
+/* Strong hero subtitle */
+.hero-sub { color: #a0a0bc !important; font-size: .77rem !important; }
+/* Pill text more visible */
+.pill { color: #b0b0cc !important; }
+/* filter label more visible */
+.flbl { color: #9898b8 !important; letter-spacing: .12em !important; }
+/* Card sub text */
+.card-sub { color: #9898b8 !important; }
+/* Table ingredient names */
+td:first-child { color: #e8e6e2 !important; font-weight: 700 !important; }
+/* Table amounts - already colored but make sure readable */
+/* Steps text */
+ol li { color: #b0b0c8 !important; }
+/* Tip text */
+.tip { color: #a8a8c0 !important; font-size: .74rem !important; }
+/* Empty state */
+.empty { color: #8888a0 !important; }
+/* Result count */
+.rcount { color: #8888a0 !important; }
+.rcount b { color: #f0f0f0 !important; }
+/* Section divider text */
+.sdiv-t { letter-spacing: .2em !important; }
+/* Nav label when active */
+.nb.on .nl, .nav-btn.on .nav-lbl { color: #f0f0f8 !important; }
+/* Hero bar readability */
+.hero-bar { font-size: .62rem !important; letter-spacing: .2em !important; }
+/* Card open state - even brighter title */
+.card.open .card-title { color: #ffffff !important; }
+/* Sauce card text */
+.sc-t { color: #e8e6e2 !important; font-size: .76rem !important; }
+.sc-s { color: #9898b8 !important; font-size: .62rem !important; }
+/* Tip box items */
+.tip-item { color: #b0b0c8 !important; }
+.tip-num { font-size: .65rem !important; }
+.tbt { color: #e8e6e2 !important; font-size: .82rem !important; }
+/* Dev badge */
+.dev-badge { color: #a0a0bc !important; border-color: #303048 !important; }
+/* lbl more visible */
+.lbl { letter-spacing: .14em !important; }
+/* ibox */
+.ibox { background: #18182a !important; border-color: #303048 !important; }
+/* Card background slightly lighter for contrast */
+.card { background: #16161e !important; }
+.card.open { background: #18182a !important; }
+
+/* ═══ TEPPANYAKI CARD BOOST ══════════════════════════ */
+.sec-meat    .card { border-color: rgba(255,85,71,.2) !important; background: linear-gradient(135deg, #1e1515 0%, #14141c 100%) !important; }
+.sec-veg     .card { border-color: rgba(58,232,85,.2) !important; background: linear-gradient(135deg, #141e15 0%, #14141c 100%) !important; }
+.sec-eggs    .card { border-color: rgba(255,212,85,.2) !important; background: linear-gradient(135deg, #1e1c14 0%, #14141c 100%) !important; }
+.sec-pan     .card { border-color: rgba(56,190,216,.2) !important; background: linear-gradient(135deg, #141c20 0%, #14141c 100%) !important; }
+.sec-special .card { border-color: rgba(204,107,255,.2) !important; background: linear-gradient(135deg, #1a1420 0%, #14141c 100%) !important; }
+.sec-meat    .card.open { border-color: rgba(255,85,71,.7) !important; }
+.sec-veg     .card.open { border-color: rgba(58,232,85,.7) !important; }
+.sec-eggs    .card.open { border-color: rgba(255,212,85,.7) !important; }
+.sec-pan     .card.open { border-color: rgba(56,190,216,.7) !important; }
+.sec-special .card.open { border-color: rgba(204,107,255,.7) !important; }
+.card::before { width: 4px !important; }
+.sec-meat    .rnum { background: rgba(255,85,71,.22) !important;  color: #FF5547 !important; }
+.sec-veg     .rnum { background: rgba(58,232,85,.22) !important;  color: #3AE855 !important; }
+.sec-eggs    .rnum { background: rgba(255,212,85,.22) !important; color: #FFD455 !important; }
+.sec-pan     .rnum { background: rgba(56,190,216,.22) !important; color: #38BED8 !important; }
+.sec-special .rnum { background: rgba(204,107,255,.22) !important;color: #CC6BFF !important; }
+.card-title { font-size: .92rem !important; font-weight: 800 !important; }
+table { font-size: .81rem !important; }
+td.amt { font-size: .82rem !important; font-weight: 800 !important; }
+ol li::before { font-size: .68rem !important; min-width: 24px !important; height: 24px !important; border-radius: 7px !important; }
+.por-val { font-size: 1.2rem !important; font-weight: 900 !important; }
+/* Tip box guide stronger */
+.tip-box { border-color: rgba(255,122,66,.2) !important; }
+.tip-box.open { border-color: rgba(255,122,66,.5) !important; }
+.tip-box-hd .tbt { font-size: .84rem !important; }
+
+</style>
 </head>
 <body>
 
